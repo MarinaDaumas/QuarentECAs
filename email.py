@@ -15,7 +15,7 @@ class Send():
 
         msg = MIMEMultipart()
         
-        message = "Caro" + nome + "Nós do grupo Covid Alerta gostariamos de informar que no dia" + data + "você esteve em contato com um caso confirmado de COVID-19 por meio de uma entrega realizada à(s)" + hora + ".Deve-se redobrar os cuidados de isolamento pelos proximos" + HJ-ENTREGA dias+ ". Fique antento aos sintomas nos próximos dias e siga as instruções da OMS" + link + 
+        message = "Caro" + nome + "Nós do grupo Covid Alerta gostariamos de informar que no dia" + data + "você esteve em contato com um caso confirmado de COVID-19 por meio de uma entrega realizada à(s)" + hora + ".Deve-se redobrar os cuidados de isolamento pelos proximos" + HJ-ENTREGA+ "dias. Fique antento aos sintomas nos próximos dias e siga as instruções da OMS" + link + 
         
         # setup the parameters of the message
         password = "covidzada"
