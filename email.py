@@ -15,13 +15,13 @@ class Send():
 
         msg = MIMEMultipart()
         
-        message = "Sua senha é: " + senha
+        message = "Caro" + nome + "Nós do grupo Covid Alerta gostariamos de informar que no dia" + data + "você esteve em contato com um caso confirmado de COVID-19 por meio de uma entrega realizada à(s)" + hora + ".Deve-se redobrar os cuidados de isolamento pelos proximos" + HJ-ENTREGA dias+ ". Fique antento aos sintomas nos próximos dias e siga as instruções da OMS" + link + 
         
         # setup the parameters of the message
         password = "covidzada"
         msg['From'] = "hh.covid.alerta@gmail.com"
         msg['To'] = email
-        msg['Subject'] = "A covid alerta tem um aviso para você!"
+        msg['Subject'] = "A Covid Alerta tem um aviso para você."
         
         # add in the message body
         msg.attach(MIMEText(message, 'plain'))
