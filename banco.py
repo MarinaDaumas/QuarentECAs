@@ -46,7 +46,10 @@ def adicionar_pedido(pedido):
     """
     Adiciona dados do novo pedido.
     """
-    pass
+    id_cliente = checar_cliente(pedido[cliente]) 
+    id_entregador = checar_entregador(pedido[entregador])   
+
+    
 
 
 def limpar_pedidos_antigos(data):
@@ -61,6 +64,6 @@ def buscar_clientes_contaminados(cpf_entregador):
     """
     Busca dados de clientes expostos a entregadores possivelmente contaminados.
     Input: id_entregador
-    Output: clientes = lista de dicionarios com todos os clientes expostos 
+    Output: clientes = lista com todos os clientes expostos 
     """
     pass
