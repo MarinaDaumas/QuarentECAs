@@ -1,7 +1,7 @@
 # vmo juntar as funcoes aqui
 import simplejson as json
 from banco import adicionar_pedido, buscar_clientes_contaminados
-
+from mensagem import mandar_email
 
 def novo_pedido():
     """
@@ -22,6 +22,10 @@ def nova_contaminacao():
         aviso = json.load(avi)
 
     expostos = buscar_clientes_contaminados(aviso[cpf])
+    
+    for entrega in expostos:
+
+        mandar_email(entrega["nome"], entrega["email"], entrega["data"])
 
 
 
