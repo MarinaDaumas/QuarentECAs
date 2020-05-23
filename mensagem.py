@@ -7,16 +7,18 @@ sender_email = "hh.covid.alerta@gmail.com"
 receiver_email = "luisa42.rodrigues@gmail.com"
 #thiagomoutinho19@poli.ufrj.br
 message = MIMEMultipart("alternative")
+msg = msg_content = MIMEText('send with attachment...', 'plain', 'utf-8')
 smtp_server = "smtp.gmail.com"
 port = 587  # For starttls
 sender_email = "hh.covid.alerta@gmail.com"
 password = "covidzada"
 
 
+
 text = """\
 Caro fulano, 
 
-	Nós do grupo Covid Alerta gostariamos de informar que no dia DATA você esteve em contato com um caso confirmado de COVID-19 por meio de uma entrega realizada à(s) HORA
+	Nós do grupo Covid Alerta gostariamos de informar que no dia DATA você esteve em contato com um caso confirmado deCOVID-19 por meio de uma entrega realizada à(s) HORA
  	É necessário redobrar seus cuidados de isolamento pelos próximos HOJE-ENTREGA dias, até mesmo dentro de sua casa, para que a doença não seja transmitida. 
 
 	Fique antento aos sintomas nos próximos dias, que podem incluir:
@@ -36,9 +38,9 @@ Caro fulano,
 	Contamos com sua ajuda,
 	Covid Alerta."""
 
-html = """\
-<html>
-  <body>
+html ="""<html>
+<body>
+    <img src="https://pngimage.net/wp-content/uploads/2018/05/cidade-alerta-png-2.png" alt="Logo" title="Logo" style="display:block" width="200" height="87" /> 
     <p>Caro Thiago,<br>
     Nós do grupo Covid Alerta gostariamos de informar que no dia 23/05 você esteve em contato com um caso confirmado de COVID-19 por meio de uma entrega realizada à(s) 13:00 em sua residência.<br>
     Em vista disso, é necessário redobrar seus cuidados de isolamento pelos próximos 15 dias, até mesmo dentro de sua casa, para que a doença não seja transmitida. 
@@ -56,10 +58,9 @@ html = """\
 	<a href="https://coronavirus.saude.gov.br/sobre-a-doenca#se-eu-ficar-doente">Informativo SUS</a><br>
 
     <p>Nosso projeto visa a sua segurança e bem estar, assim como daqueles próximos a você. Sua participação é essencial para que possamos vencer o coronavírus e voltar à normalidade o mais rápido possivel. Mais detalhes sobre nosso projeto e nossas parcerias podem ser encontradas por meio de nosso site, encaminhado abaixo.</p><br>
-    <a href="https://coronavirus.saude.gov.br/sobre-a-doenca#se-eu-ficar-doente"> Nosso Site </a>
+    <a href="https://coronavirus.saude.gov.br/sobre-a-doenca#se-eu-ficar-doente"> Nosso Site </a><br> 
   </body>
-</html>
-"""
+</html>"""
 
 # Turn these into plain/html MIMEText objects
 part1 = MIMEText(text, "plain")
