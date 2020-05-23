@@ -1,0 +1,1 @@
+# vmo juntar as funções aqui
