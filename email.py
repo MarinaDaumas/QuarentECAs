@@ -18,10 +18,10 @@ class Send():
         message = "Sua senha é: " + senha
         
         # setup the parameters of the message
-        password = "yfxrrmlbauwmdnbz"
-        msg['From'] = "conhecendoapoli@gmail.com"
+        password = "covidzada"
+        msg['From'] = "hh.covid.alerta@gmail.com"
         msg['To'] = email
-        msg['Subject'] = "OLHA QUE LEGAL!"
+        msg['Subject'] = "A covid alerta tem um aviso para você!"
         
         # add in the message body
         msg.attach(MIMEText(message, 'plain'))
