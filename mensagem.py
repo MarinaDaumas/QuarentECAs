@@ -1,6 +1,7 @@
 import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.mime.image import MIMEImage
 
 sender_email = "hh.covid.alerta@gmail.com"
 receiver_email = "luisa42.rodrigues@gmail.com"
