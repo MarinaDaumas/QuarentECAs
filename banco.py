@@ -4,7 +4,7 @@
 import sqlite3
 
 avisos = []
-
+l_dados = []
 id = 1
 CPF_c = 123
 CPF_e = 321
@@ -162,20 +162,23 @@ def buscar_clientes_contaminados(cpf_entregador):
     SELECT data
     FROM entregas
     WHERE cpf=(?);
-    """,(cpf_entregador)).fetchall()
+    """,(cpf_entregador,)).fetchall()
 
     l_email = cursor.execute("""
     SELECT email
     FROM entregas
     WHERE cpf=(?);
-    """,(cpf_entregador)).fetchall()
+    """,(cpf_entregador,)).fetchall()
 
     for i in l_email:
-        l_dados = cursor.execute("""
+        x = cursor.execute("""
         SELECT *
         FROM clientes
-        WHERE cpf=(?);
-        """,(cpf_entregador)).fetchall()
+        WHERE email=(?);
+        """,(l_email[i])).fetchall()
+
+        l_dados.append(x[i])
+        
 
     for i in len(l_email):
         avisos.append([l_data[i],l_dados[i][1],l_dados[i][2]])
