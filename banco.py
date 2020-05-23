@@ -146,7 +146,7 @@ def adicionar_pedido(pedido):
 def limpar_pedidos_antigos(data):
     """
     Apaga do banco registros de pedidos feitos a mais de 15.
-    Input: data = dia de hoje
+    Input: data = data mais antiga a nao ser apagada
     """
     pass
 
