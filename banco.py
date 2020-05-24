@@ -9,7 +9,7 @@ l_dados = []
 
 
 
-conn = sqlite3.connect('covid.db')
+conn = sqlite3.connect('covid.db',  check_same_thread=False)
 cursor = conn.cursor()
 
 def criar_tabelas():
@@ -20,7 +20,7 @@ def criar_tabelas():
             nome TEXT
     );
     """)
-
+    
 
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS clientes (
@@ -41,6 +41,7 @@ def criar_tabelas():
     );
     """)
 
+    conn.commit()
 
 
 def checar_cliente(cliente):
@@ -59,6 +60,7 @@ def checar_cliente(cliente):
     FROM clientes
     WHERE email=(?);
     """,(email,)).fetchall()
+    
 
     if id_cliente == []:
         id_cliente = adicionar_clientes(cliente)
@@ -79,10 +81,11 @@ def checar_entregador(entregador):
     FROM entregadores
     WHERE cpf=(?);
     """,(cpf,)).fetchall()
+    
 
     if cpf == []:
         cpf = adicionar_entregador(entregador)
-
+    
     return cpf 
         
 
@@ -98,13 +101,14 @@ def adicionar_clientes(cliente):
     INSERT INTO clientes (nome,email,telefone)
     VALUES (?,?,?)
     """, (nome, email, telefone))
-    conn.commit()
+    
 
     id_cliente = cursor.execute("""
     SELECT id
     FROM clientes
     WHERE nome=(?);
     """,(nome,)).fetchall()
+
 
     return id_cliente
 
@@ -121,8 +125,9 @@ def adicionar_entregador(entregador):
     INSERT INTO entregadores (cpf,nome)
     VALUES (?,?)
     """, (cpf, nome))
-    conn.commit()
-
+    cpf = []
+    cpf.append([entregador[1]])
+    print(cpf)
     return cpf
 
 
@@ -132,9 +137,9 @@ def adicionar_pedido(pedido):
     """
     id_cliente = checar_cliente(pedido["cliente"]) 
     id_entregador = checar_entregador(pedido["entregador"])   
-
+    
     data = pedido['data']
-    #print(data, id_cliente[0][0], id_entregador[0][0])
+    print(data, id_cliente, id_entregador)
     cursor.execute("""
     INSERT INTO entregas (data, cpf_entregador, id_cliente)
     VALUES (?, ?, ?)
@@ -169,7 +174,7 @@ def buscar_clientes_contaminados(cpf_entregador):
     FROM entregas
     WHERE cpf_entregador=(?);
     """,(cpf_entregador,)).fetchall()
-    conn.commit()
+    
    
     avisos = []
 
@@ -183,7 +188,7 @@ def buscar_clientes_contaminados(cpf_entregador):
         FROM clientes
         WHERE id=(?);
         """,(id_cliente,)).fetchall()
-
+        conn.commit()
            
         avisos.append({"data":data, "nome":dados_cliente[0][0], "email":dados_cliente[0][1], "telefone":dados_cliente[0][2]})
 
