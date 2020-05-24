@@ -20,8 +20,7 @@
     
     header {
       grid-area: header;
-      background-color: #fff;
-      
+      background-color: lightblue;
     }
 
     main {
@@ -31,7 +30,8 @@
 
     footer {
       grid-area: footer;
-      background-color: #fff;
+      background-color: #e23939;
+    
     }
 
     .card-container {
@@ -52,7 +52,7 @@
       transition: all 0.6s cubic-bezier(.25, .8, .25, 1);
       margin: 2rem;
       padding: 20px;
-      width: 400px;
+      width: 300px;
       min-height: 300px;
 
       display: flex;
@@ -83,6 +83,34 @@
   nav {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+    margin-left: 45%;
+    background-color: #fff ;
+    width: 175px;
+    border-radius: 5px;
+
+  }
+
+  .tparceiro{
+    font-weight: bold;
+    font-size: 17px;
+    text-decoration: none;
+  }
+
+  .rappi{
+    width: 110px;
+    margin-top: 260px;
+    margin-left: 140px;
+  }
+  .ifood{
+    width: 90px;
+    margin-top: 260px;
+    margin-left: 300px;
+  }
+
+  .qteca{
+    float:right;
+    font-size: 18px;
   }
 
   </style>
@@ -93,27 +121,26 @@
     <header>
       <a href="./"><img src="../static/img/logo.png" alt="logo"></a>
       <nav>
-        <a href="./contato">Entre em contato conosco</a>
+        <a href="./contato" class="tparceiro">Seja nosso parceiro</a>
       </nav>
     </header>
     <main>
       <div class="card-container">
         <div class="card">
           <div class="projetos">
-            <p class="titulo">Nosso Projeto</p>
-            <ul class="lista-projetos">
-              <li><a href="#Selo">Nosso Selo</a></li>
-              <li><a href="#Parceiros">Nossos Parceiros</a></li>
-              <li><a href="#motivação">A motivacao</a></li>
-            </ul>
+            <p class="titulo">Nosso Selo</p> 
+            <p>
+              A vantagem para a empresa consiste em ser reconhecida pela sua transparência e respeito ao consumidor,
+              através do recebimento do Selo de Comprometimento de Combate ao Coronavírus.
+            </p>
           </div>
         </div>
         <div class="card">
           <div id="selo">
-            <p class="titulo">Nosso Selo</p>
+            <p class="titulo">Como Participar</p>
             <p>
-              A vantagem para a empresa consiste em ser reconhecida pela sua transparência e respeito ao consumidor,
-              através do recebimento do Selo de Comprometimento de Combate ao Coronavírus.
+              Para Participar é simples, só entrar em contato conosco que 
+              nós te auxiliaremos a implantar a ferramenta com segurança e confiança
             </p>
           </div>
         </div>
@@ -123,18 +150,15 @@
             <p>
               Essas são as empresas que já entraram para a iniciativa, e estão ajudando a combater o Covid
             </p>
-            <div id="como-participar">
-              <h2>Como Participar</h2>
-              <p>
-                Para Participar é simples, só entrar em contato conosco que 
-                nós te auxiliaremos a implantar a ferramenta com segurança e confiança  
-              </p>
-            </div>
+            <img src="../static/img/rappi.png" class="rappi">        
+            <img src="../static/img/ifood.png" class="ifood" float="left">        
           </div>
       </div>
 
       </div>
     </main>
-    <footer>QuarentECAs </footer>
+    <footer><p class="qteca">
+      Projeto QuarentECA
+    </p> </footer>
   </body>
   </html>
