@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS clientes (
         id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         nome TEXT,
         email TEXT,
-        telefone
+        telefone INTEGER
 );
 """)
 '''
@@ -52,7 +52,7 @@ conn.commit()
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS entregas (
         id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-        data INTEGER,
+        data DATE,
         cpf_entregador INTEGER,
         email_cliente TEXT
 );
@@ -152,7 +152,7 @@ def adicionar_pedido(pedido):
 def limpar_pedidos_antigos(data):
     """
     Apaga do banco registros de pedidos feitos a mais de 15.
-    Input: data = dia de hoje
+    Input: data = data mais antiga a nao ser apagada
     """
     pass
 
