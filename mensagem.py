@@ -68,7 +68,7 @@ def mandar_email():
     <body style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  font-size:15px; color:#000000; background-color:#e8f1fc">
     <div style= "text-align: center;"> VAMOS VENCER O CORONA! </div>
     <div>
-        <div style="margin: 0 auto;"> <img src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-dark-midnight-blue-solid-color-background.jpg" alt="Logo" title="Logo" style="display:block" width="550" height="150" /></div><br>
+        <div style="margin: 0 auto;"> <img src="https://i.ibb.co/SsS57pW/capa-logo-tamanho-novo.png" alt="Logo" title="Logo" style="display:block" width="550" height="150" /></div><br>
 
         <div class="caro" style= "font-weight: bold; margin-left: 4%;"> Caro """ + nome + """,</div> 
         <p style="text-align: left; margin: 5%;">
