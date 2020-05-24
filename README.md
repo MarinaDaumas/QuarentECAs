@@ -34,7 +34,7 @@ Com essas mensagens, atualizamos nosso banco de dados e resgatamos o contato de 
 
 
 
-A vantagem para a empresa consiste em ser reconhecida pela sua transparência e respeito ao consumidor, através do recebimento do Selo de Comprometimento de Combate ao Coronavírus.
+A vantagem para a empresa consiste em ser reconhecida pela sua transparência e respeito ao consumidor, através do recebimento do Selo de Comprometimento de Combate ao Covid.
 
 
 
