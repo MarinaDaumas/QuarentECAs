@@ -10,7 +10,7 @@ class CLIENTE:
     FORMAT = 'utf-8'
     DISCONNECT_MESSAGE = "!DISCONNECT"
     #SERVER = '189.5.178.202' # public ip
-    SERVER = '192.168.0.11'
+    SERVER = '127.0.1.1'
     ADDR = (SERVER, PORT)
 
 

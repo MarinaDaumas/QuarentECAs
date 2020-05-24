@@ -36,7 +36,7 @@ def nova_contaminacao(aviso):
 def limpar():
     # data AAAA-MM-DD 
     hoje = date.today()
-    tempo = timedelta(days=15)
+    tempo = timedelta(days=4)
     outro_dia = hoje - tempo
 
     limpar_pedidos_antigos(outro_dia)
