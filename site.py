@@ -11,8 +11,8 @@ def quem_somos():
 @app.route("/contato")
 def contate_nos():
 	return render_template("contato.html")
-
     
+
 @app.route("/obrigado", methods=["POST", "GET"])
 def obrigado():
     if request.method == "POST":

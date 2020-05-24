@@ -5,21 +5,16 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 
 def mandar_email(nome, email, data):
-    sender_email = "hh.covid.alerta@gmail.com"
-    #receiver_email = "luisa42.rodrigues@gmail.com" #email
-    #thiagomoutinho19@poli.ufrj.br
-    receiver_email = email
     
     message = MIMEMultipart("alternative")
     message['subject']= "Covid alerta tem um aviso para você"
     smtp_server = "smtp.gmail.com"
     port = 587  # For starttls
+
     sender_email = "hh.covid.alerta@gmail.com"
     password = "covidzeca"
-
-    #nome = "thiaguinho"
-    #data = "20/05"
     
+    receiver_email = email
     nome = nome
     data = data
         
@@ -185,6 +180,7 @@ def contato_empresa(nome = "ifood", email = "ifood@gmail.com", telefone="6296432
         server.login(sender_email, password)
         # TODO: Send email here
         server.sendmail(sender_email, receiver_email, message.as_string())
+        print("email mandado para: ", receiver_email)
     except Exception as e:
         # Print any error messages to stdout
         print(e)
