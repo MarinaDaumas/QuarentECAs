@@ -13,8 +13,8 @@ def novo_pedido():
     with open ("pedido.json", 'r') as ped:
         pedido = json.load(ped)
 
-        pedido["data"] = date.today() 
-    
+    pedido["data"] = date.today()
+    print(pedido)
     adicionar_pedido(pedido)
 
 def nova_contaminacao():
@@ -42,10 +42,10 @@ def limpar():
     
 
 
-if entrada == "pedido":
-    novo_pedido()
+# if entrada == "pedido":
+#     novo_pedido()
 
-else:
-    nova_contaminacao()
+# else:
+#     nova_contaminacao()
 
-limpar()
+
