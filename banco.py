@@ -13,7 +13,7 @@ data = datetime.today().strftime('%Y-%m-%d')
 
 id = 1
 CPF_c = 123
-CPF_e = 321
+CPF_e = 3214
 nome_e = "evanilson"
 nome_c = "jorge"
 email_c = "kkk"
@@ -23,7 +23,8 @@ telefone = 99999999
 
 conn = sqlite3.connect('covid.db')
 cursor = conn.cursor()
-####
+
+
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS entregadores (
         cpf INTEGER PRIMARY KEY,
@@ -40,15 +41,8 @@ CREATE TABLE IF NOT EXISTS clientes (
         telefone INTEGER
 );
 """)
-'''
-cursor.execute("""
-INSERT INTO cliente (nome,email,telefone)
-VALUES (?,?,?)
-""", (nome_c,email_c,telefone))
-conn.commit()
-'''
-#
-#####
+
+
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS entregas (
         id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -57,13 +51,7 @@ CREATE TABLE IF NOT EXISTS entregas (
         email_cliente TEXT
 );
 """)
-'''
-cursor.execute("""
-INSERT INTO entregas (data)
-VALUES (?)
-""", (data,cpf_e,email_c))
-conn.commit()
-'''
+
 
 
 def checar_cliente(cliente):
@@ -154,7 +142,12 @@ def limpar_pedidos_antigos(data):
     Apaga do banco registros de pedidos feitos a mais de 15.
     Input: data = data mais antiga a nao ser apagada
     """
-    pass
+    
+    cursor.execute("""
+    DELETE FROM entregas
+    WHERE data<=(?);
+    """,(data,))
+    conn.commit()
 
 
 def buscar_clientes_contaminados(cpf_entregador):
