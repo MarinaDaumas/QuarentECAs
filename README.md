@@ -19,7 +19,7 @@ Os nossos serviço é voltado para empresas, de qualquer ramo, que tenham funcio
 
 - 1ª Parte
 
-Utilisando nosso servidor, as empresas nos mandam mensagens informando sobre novas entregas ou novos casos suspeitos de covid entre seus funcionários.
+Utilizando nosso servidor, as empresas nos mandam mensagens informando sobre novas entregas ou novos casos suspeitos de Covid entre seus funcionários.
 
 - 2ª Parte
 
