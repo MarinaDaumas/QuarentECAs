@@ -134,6 +134,9 @@ def adicionar_pedido(pedido):
     id_entregador = checar_entregador(pedido["entregador"])   
 
     data = pedido['data']
+    print(id_entregador)
+    print(id_cliente)
+
 
     cursor.execute("""
     INSERT INTO entregas (data, cpf_entregador, id_cliente)

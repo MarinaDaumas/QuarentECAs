@@ -3,18 +3,23 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 
-def mandar_email():
+def mandar_email(nome, email, data):
     sender_email = "hh.covid.alerta@gmail.com"
-    receiver_email = "luisa42.rodrigues@gmail.com" #email
+    #receiver_email = "luisa42.rodrigues@gmail.com" #email
     #thiagomoutinho19@poli.ufrj.br
+    receiver_email = email
+    
     message = MIMEMultipart("alternative")
     smtp_server = "smtp.gmail.com"
     port = 587  # For starttls
     sender_email = "hh.covid.alerta@gmail.com"
     password = "covidzada"
 
-    nome = "thiaguinho"
-    data = "20/05"
+    #nome = "thiaguinho"
+    #data = "20/05"
+    
+    nome = nome
+    data = data
         
     text = """\
     Caro """ + nome + """,
@@ -133,4 +138,4 @@ def mandar_email():
         print(e)
     finally:
         server.quit() 
-mandar_email()
+#mandar_email()

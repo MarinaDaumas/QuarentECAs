@@ -4,9 +4,9 @@ import pickle
 
 
 def send_msg():
-    nome_c = "e não é"
-    email = "heitor_ndrd@poli.ufrj.br"
-    telefone = 62995282059
+    nome_c = input("seu nome, pfvor: ")
+    email = input("email: ")
+    telefone = input("e telefone: ")
 
     nome_e = "Lucio Costa"
     cpf = "167.876.352-14"
