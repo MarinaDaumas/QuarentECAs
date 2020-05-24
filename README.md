@@ -15,15 +15,15 @@ O objetivo do Covid-Alerta é alertar aqueles que estiveram em contato com pesso
 
 #### O Produto
 
-Os nossos serviço é voltado para empresas, de qualquer ramo, que tenham funcionários entregadores. Com um sistema enxuto e dividido em 3 partes principais. Realizamos algo único no mercado, auxiliando empresas no controle da epidemia sem associar seus nomes diratamente ao contágio.
+O nosso serviço é voltado para empresas, de qualquer ramo, que trabalhem com entregadores. Com um sistema simples, realizamos algo único no mercado, auxiliando empresas no controle da epidemia, reconhecendo seu comprometimento com essa causa.  O sistema é dividido em três partes:
 
 - 1ª Parte
 
-Utilizando nosso servidor, as empresas nos mandam mensagens informando sobre novas entregas ou novos casos suspeitos de Covid entre seus funcionários.
+Utilizando nosso servidor, as empresas nos mandam mensagens informando sobre novas entregas ou novos casos suspeitos de Covid entre seus entregadores.
 
 - 2ª Parte
 
-Com essas mensagens, atualizamos nosso banco de dados e resgatamos o contato de clientes que tiveram contato com o entregador até 2 dias antes do inicio dos sintomas. 
+Com essas mensagens, atualizamos nosso banco de dados e resgatamos o contato de clientes que tiveram contato com o entregador até 2 dias antes do início dos sintomas. 
 
 - 3ª Parte 
 
@@ -33,12 +33,15 @@ Com essas mensagens, atualizamos nosso banco de dados e resgatamos o contato de 
 #### Informações adicionais 
 
 
-selo de comprometimento de combate ao corona.
+
+A vantagem para a empresa consiste em ser reconhecida pela sua transparência e respeito ao consumidor, através do recebimento do Selo de Comprometimento de Combate ao Coronavírus.
 
 
-*Forneça informações adicionais, adicione novos tópicos ou subtópicos. Use esse arquivo como um guia rápido para manter claro os objetivos de seu projeto para os demais integrantes. Manter o foco conjunto de forma coesa lhe ajudará a criar um produto mais *sólido*.*
+
 
 #### Instruções para teste do MVP
+
+
 
 
 #### Bibliografia
