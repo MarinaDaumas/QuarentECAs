@@ -2,6 +2,7 @@
 # mandar emails 
   
 import sqlite3
+from datetime import date
 
 avisos = []
 l_dados = []
@@ -104,12 +105,16 @@ def adicionar_clientes(cliente):
     telefone = cliente[2]
 
     cursor.execute("""
-    INSERT INTO cliente (nome,email,telefone)
+    INSERT INTO clientes (nome,email,telefone)
     VALUES (?,?,?)
     """, (nome, email, telefone))
     conn.commit()
 
-    id_cliente = #pegar id cliente
+    id_cliente = cursor.execute("""
+        SELECT id
+        FROM clientes
+        WHERE email=(?);
+        """,(email,)).fetchall()
 
     return id_cliente
 
@@ -120,10 +125,10 @@ def adicionar_entregador(entregador):
     """
 
     cpf = entregador[1]
-    nome = [0]
+    nome = entregador[0]
 
     cursor.execute("""
-    INSERT INTO entregador (cpf,nome)
+    INSERT INTO entregadores (cpf,nome)
     VALUES (?,?)
     """, (cpf, nome))
     conn.commit()
@@ -135,14 +140,15 @@ def adicionar_pedido(pedido):
     """
     Adiciona dados do novo pedido.
     """
-    id_cliente = checar_cliente(pedido[cliente]) 
-    id_entregador = checar_entregador(pedido[entregador])   
+    id_cliente = checar_cliente(pedido["cliente"]) 
+    id_entregador = checar_entregador(pedido["entregador"])   
 
-    data = pedido[data]
+    data = pedido['data']
+    #print(data, id_cliente[0][0], id_entregador[0][0])
     cursor.execute("""
     INSERT INTO entregas (data, cpf_entregador, id_cliente)
     VALUES (?, ?, ?)
-    """, (data, id_entregador, id_cliente))
+    """, (data, id_entregador[0][0], id_cliente[0][0]))
     conn.commit()
 
     
@@ -174,7 +180,7 @@ def buscar_clientes_contaminados(cpf_entregador):
     WHERE cpf_entregador=(?);
     """,(cpf_entregador,)).fetchall()
     conn.commit()
-
+   
     avisos = []
 
     for i in range(len(l_data)):
@@ -188,10 +194,9 @@ def buscar_clientes_contaminados(cpf_entregador):
         WHERE id=(?);
         """,(id_cliente,)).fetchall()
 
-    
-        avisos.append({"data":data, "nome":dados_cliente[0], "email":dados_cliente[1], "telefone":dados_cliente[2]})
+           
+        avisos.append({"data":data, "nome":dados_cliente[0][0], "email":dados_cliente[0][1], "telefone":dados_cliente[0][2]})
 
-    print(l_dados)
+    #print(avisos)
+    return avisos
 
-
-    print(avisos)
