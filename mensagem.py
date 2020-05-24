@@ -24,27 +24,28 @@ def mandar_email(nome, email, data):
     text = """\
     Caro """ + nome + """,
 
-        Nós do grupo Covid Alerta gostariamos de informar que no dia """ + data + """ você esteve em contato com um caso confirmado de COVID-19 por meio de uma entrega realizada em sua residência.
+        Nós do grupo Covid Alerta gostariamos de informar que no dia """ + data + """ você esteve em contato com um caso suspeito de COVID-19 por meio de uma entrega realizada em sua residência.
         Em vista disso, é necessário redobrar seus cuidados de isolamento pelos próximos 15 dias (ou pelo menos 15 dias desde a entrega), até mesmo dentro de sua casa, para que a doença não seja transmitida. 
 
-        Fique antento aos sintomas nos próximos dias, que podem incluir:
+        Fique atento aos sintomas nos próximos dias, que podem incluir:
 
         -Febre
         -Dor no Corpo 
         -Tosse 
         -Dificuldade Respiratória
 
+        Solicitamos q entre em contato com o numero 136 para informar sobre esta notificação e obter orienteções.
+
         Para mais informações sobre a doença e procedimentos, acessar o site abaixo:
 
         https://coronavirus.saude.gov.br/sobre-a-doenca#se-eu-ficar-doente
 
 
-        É importante também lembrar que as empresas, restaurantes, entregadores e etc, não carregam a culpa da transmissão.
-        O novo Coronavirus é uma doença altamente contagiosa e pode ser pega até mesmo por aqueles que tomam os devidos cuidados.
-        Esses trabalhadores estão se arriscando para que ainda possamos ter acesso a aquilo que precisamos e nós devemos ter respeito pela coragem deles.
-        
+        A doença pelo novo coronavirus é altamente contagiosa, e pode ser tranmitida antes do inicio dos sintomas. a despeito de todos os cuidados para prevençao da tranmissao, ainda existe um risco minimo de contágio nesses contatos, de modo que
+        empresas e entregadores n podem ser responsabilizados poe eventual tramissao da doenças.  todos os trabalhadores envolvidos estao se arriscando para que tenhamos acesso à quilo q precisamos. devemos a eles o nosso respeito e admiraçao.
+
         Nosso projeto visa a sua segurança e bem estar, assim como daqueles próximos a você. Sua participação é essencial para que possamos vencer o coronavírus e voltar à normalidade o mais rápido possivel. 
-        Mais detalhes sobre nosso projeto e nossas parcerias podem ser encontradas por meio de nosso site, encaminhado abaixo.
+        Mais detalhes sobre nosso projeto e nossas parcerias podem ser encontrados por meio de nosso site, encaminhado abaixo.
 
         https://coronavirus.saude.gov.br/sobre-a-doenca#se-eu-ficar-doente
 
