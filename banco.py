@@ -9,7 +9,7 @@ l_dados = []
 
 
 
-conn = sqlite3.connect('covid.db')
+conn = sqlite3.connect('covid.db',  check_same_thread=False)
 cursor = conn.cursor()
 
 def criar_tabelas():
@@ -139,7 +139,14 @@ def adicionar_pedido(pedido):
     id_entregador = checar_entregador(pedido["entregador"])   
     
     data = pedido['data']
+<<<<<<< HEAD
     print(data, id_cliente, id_entregador)
+=======
+    print(id_entregador)
+    print(id_cliente)
+
+
+>>>>>>> ca841ab3665910541b10730a835cf6e46c0a3ebc
     cursor.execute("""
     INSERT INTO entregas (data, cpf_entregador, id_cliente)
     VALUES (?, ?, ?)
