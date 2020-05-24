@@ -6,41 +6,48 @@
 
 #### Apresentação 
 
-Com o distânciamento social imposto pela pandemia do covid-19, as pessoas r tem recorrido a serviços de diversos produtos. Embora seja uma solução mais segura do que sair na rua, é possivel que um entregador esteja contaminado, e o cliente corre o risco de se contaminar sem nem imaginar. O rastreio de de casos e o isolamento daqueles que estiveram em conato, mesmo sem apresentar sintomas, é comprovadamente uma das medidas mais efetivas para combater o avanço do coronavírus. Por isso , acreditamos que é importante alertar aquele que estiveram em contato com pessoas infectadas, para que eles estejam conscientes e possam melhor proteger aqueles que amam. Para isso, desenvolvemos um serviço, capaz de, com os dados das entregas, entrar em contato com a
+Com  necessidade de distanciamento social decorrente da pandemia da doença pelo novo coronavirus (Covid-19), as pessoas passaram a recorrer a serviços de entrega para os mais variados produtos. Embora seja uma solução mais segura do que sair à rua para compras, existe um risco de contágio decorrente do contato com o entregador e objetos que são compartilhados por ambos, como as máquinas de cartão de crédito.
 
-Use essa seção para falar sobre as motivações de seu time e, de forma breve, qual o produto que estão trabalhando. Se possível forneça **o que** seu produto é, por exemplo: Um app, uma aplicação web, gadget, dentre outros.
+Se o entregador apresentar sintomas compatíveis com a Covid-19, é importante que seja imediatamente afastado do trabalho e que os clientes que tiveram contato com ele a partir de 2¹ dias antes do início dos sintomas sejam notificados.
+O isolamento dos casos e daqueles que estiveram em contato, mesmo sem apresentar sintomas, é comprovadamente uma das medidas mais efetivas para combater o avanço do novo coronavírus.
+O objetivo do Covid-Alerta é alertar aqueles que estiveram em contato com pessoas infectadas para que possam avaliar seu risco de infecção e assim tomar os cuidados necessários para seu própria saúde e proteger aqueles que amam, iniciando o autoisolamento e monitoramento de sintomas, quando indicado.
+
+
+
+ *Use essa seção para falar sobre as motivações de seu time e, de forma breve, qual o produto que estão trabalhando. Se possível forneça **o que** seu produto é, por exemplo: Um app, uma aplicação web, gadget, dentre outros.*
 
 #### O Produto
 
+Os nossos serviço é voltado para empresas, de qualquer ramo, que tenham funcionários entregadores. Com um sistema enxuto e dividido em 3 partes principais. Realizamos algo único no mercado, auxiliando empresas no controle da epidemia sem associar seus nomes diratamente ao contágio.
+
+- 1ª Parte
+
+Utilisando nosso servidor, as empresas nos mandam mensagens informando sobre novas entregas ou novos casos suspeitos de covid entre seus funcionários.
+
+- 2ª Parte
+
+Com essas mensagens, atualizamos nosso banco de dados e resgatamos o contato de clientes que tiveram contato com o entregador até 2 dias antes do inicio dos sintomas. 
+
+- 3ª Parte 
+
+É enviado automaticamente um email para esses clientes, informando sobre o ocorrido e dando orientações.
 
 
-Entre em mais detalhes sobre seu produto, levantando pontos positivos, o porquê dele ser inovador e como ele ajuda o Brasil e o mundo no combate e minimização de danos causados pela COVID-19.
+
+*Entre em mais detalhes sobre seu produto, levantando pontos positivos, o porquê dele ser inovador e como ele ajuda o Brasil e o mundo no combate e minimização de danos causados pela COVID-19.*
 
 #### Informações adicionais 
 
+Apesar 
 selo de comprometimento de combate ao corona.
-Forneça informações adicionais, adicione novos tópicos ou subtópicos. Use esse arquivo como um guia rápido para manter claro os objetivos de seu projeto para os demais integrantes. Manter o foco conjunto de forma coesa lhe ajudará a criar um produto mais *sólido*.
 
 
+*Forneça informações adicionais, adicione novos tópicos ou subtópicos. Use esse arquivo como um guia rápido para manter claro os objetivos de seu projeto para os demais integrantes. Manter o foco conjunto de forma coesa lhe ajudará a criar um produto mais *sólido*.*
 
-desafio
-
-
-mudar para caso suspeito
-calcular data
-
-mudar antent0 =atento
-
-solicitamos q entre em contato com o numero 136 para informar sobre esta notificação e obter orienteções
-
-para mais informações 
+#### Instruções para teste do MVP
 
 
-entre em contato 
+#### Bibliografia
 
- a doença pelo novo coronavirus é altamente contagiosa, e pode ser tranmitida antes do inicio dos sintomas. a despeito de todos os cuidados para prevençao da tranmissao, ainda existe um risco minimo de contágio nesses contatos, de modo que   
-empresas e entregadores n podem ser responsabilizados poe eventual tramissao da doenças.  todos os trabalhadores envolvidos estao se arriscando para que tenhamos acesso à quilo q precisamos. devemos a eles o nosso respeito e admiraçao.
-
-
-
-encontrados 
+1 - [OMS, Cosiderations in the investigation of cases and clusters of COVID-19](https://apps.who.int/iris/bitstream/handle/10665/331668/WHO-2019-nCoV-cases_clusters_investigation-2020.2-eng.pdf?sequence=1&isAllowed=y)
+ 
