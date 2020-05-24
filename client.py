@@ -50,5 +50,5 @@ class CLIENTE:
 
 client = CLIENTE()
 
-client.send(send_msg()) #função para cadastrar um pedido
+#client.send(send_msg()) #função para cadastrar um pedido
 client.send(send_aviso()) #função para mandar o alerta de que o entregador foi contaminado
