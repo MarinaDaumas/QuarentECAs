@@ -48,3 +48,5 @@ A vantagem para a empresa consiste em ser reconhecida pela sua transparência e 
 
 1 - [OMS, Cosiderations in the investigation of cases and clusters of COVID-19](https://apps.who.int/iris/bitstream/handle/10665/331668/WHO-2019-nCoV-cases_clusters_investigation-2020.2-eng.pdf?sequence=1&isAllowed=y)
  
+
+2 -[Estadão, Pessoas não diagnosticadas com novo coronavírus são as maiores responsáveis por disseminar a pandemia](https://saude.estadao.com.br/noticias/geral,pessoas-nao-diagnosticadas-com-novo-coronavirus-sao-as-maiores-responsaveis-por-disseminar-epidemia,70003235348)

@@ -191,6 +191,6 @@ def contato_empresa(nome = "ifood", email = "ifood@gmail.com", telefone="6296432
         server.quit()
 
 
-#mandar_email()
+mandar_email("Fernando Cardoso", "marina.daumas@gmail.com", "19/05/2020")
 
 #contato_empresa()
