@@ -6,9 +6,6 @@ import sqlite3
 avisos = []
 l_dados = []
 
-from datetime import datetime
-
-data = datetime.today().strftime('%Y-%m-%d')
 
 
 id = 1
@@ -24,33 +21,34 @@ telefone = 99999999
 conn = sqlite3.connect('covid.db')
 cursor = conn.cursor()
 
+def criar_tabelas():
 
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS entregadores (
-        cpf INTEGER PRIMARY KEY,
-        nome TEXT
-);
-""")
-
-
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS clientes (
-        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-        nome TEXT,
-        email TEXT,
-        telefone INTEGER
-);
-""")
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS entregadores (
+            cpf INTEGER PRIMARY KEY,
+            nome TEXT
+    );
+    """)
 
 
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS entregas (
-        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-        data DATE,
-        cpf_entregador INTEGER,
-        email_cliente TEXT
-);
-""")
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS clientes (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            nome TEXT,
+            email TEXT,
+            telefone INTEGER
+    );
+    """)
+
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS entregas (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            data DATE,
+            cpf_entregador INTEGER,
+            id_cliente INTEGER
+    );
+    """)
 
 
 
@@ -60,17 +58,21 @@ def checar_cliente(cliente):
     Input: entregador = dicionario com todos os dados do cliente
     Output: id_cliente
     """
-    email = cursor.execute("""
-    SELECT nome
-    FROM clientes
-    WHERE cpf=(?);
-    """,(cliente[1],)).fetchall()
 
-    if email == []:
+    # Por enquanto apenas clientes cadastrados com email. Adaptar para telefone mais tarde
+    
+    email = cliente[1] 
+
+    id_cliente = cursor.execute("""
+    SELECT id
+    FROM clientes
+    WHERE email=(?);
+    """,(email,)).fetchall()
+
+    if id_cliente == []:
         id_cliente = adicionar_clientes(cliente)
-        return id_cliente
-    else:
-        return email
+    
+    return id_cliente
         
 
 def checar_entregador(entregador):
@@ -79,46 +81,54 @@ def checar_entregador(entregador):
     Input: entregador = dicionario com todos os dados do entregador
     Output: id_entregador
     """
-    x = entregador[1]
+    cpf = entregador[1]
+
     cpf = cursor.execute("""
     SELECT cpf
     FROM entregadores
     WHERE cpf=(?);
-    """,(x,)).fetchall()
+    """,(cpf,)).fetchall()
 
     if cpf == []:
-        id_entregador = adicionar_entregador(entregador)
-        return id_entregador
-    else:
-        return cpf 
+        cpf = adicionar_entregador(entregador)
+
+    return cpf 
         
 
 def adicionar_clientes(cliente):
     """
     Adiciona cadastro do novo cliente ao banco.
     """
-    x = cliente[0]
-    y = cliente[1]
-    z = cliente[2]
+    nome = cliente[0]
+    email = cliente[1]
+    telefone = cliente[2]
 
     cursor.execute("""
     INSERT INTO cliente (nome,email,telefone)
     VALUES (?,?,?)
-    """, (x,y,z))
+    """, (nome, email, telefone))
     conn.commit()
-    return x
+
+    id_cliente = #pegar id cliente
+
+    return id_cliente
 
 
 def adicionar_entregador(entregador):
     """
     Adiciona cadastro do novo entregador ao banco.
     """
+
+    cpf = entregador[1]
+    nome = [0]
+
     cursor.execute("""
     INSERT INTO entregador (cpf,nome)
     VALUES (?,?)
-    """, (entregador[1], entregador[0]))
+    """, (cpf, nome))
     conn.commit()
-    return entregador[1]
+
+    return cpf
 
 
 def adicionar_pedido(pedido):
@@ -128,10 +138,11 @@ def adicionar_pedido(pedido):
     id_cliente = checar_cliente(pedido[cliente]) 
     id_entregador = checar_entregador(pedido[entregador])   
 
+    data = pedido[data]
     cursor.execute("""
-    INSERT INTO entregas (data)
-    VALUES (?)
-    """, (pedido,id_entregador,id_cliente))
+    INSERT INTO entregas (data, cpf_entregador, id_cliente)
+    VALUES (?, ?, ?)
+    """, (data, id_entregador, id_cliente))
     conn.commit()
 
     
@@ -158,37 +169,29 @@ def buscar_clientes_contaminados(cpf_entregador):
     """
 
     l_data = cursor.execute("""
-    SELECT data
+    SELECT data, id_cliente
     FROM entregas
     WHERE cpf_entregador=(?);
     """,(cpf_entregador,)).fetchall()
     conn.commit()
 
-    l_email = cursor.execute("""
-    SELECT email_cliente
-    FROM entregas
-    WHERE cpf_entregador=(?);
-    """,(cpf_entregador,)).fetchall()
-    conn.commit()
+    avisos = []
 
-    x = len(l_email)
-    for i in range(x):
-        print(i)
-        k = l_email[i]
+    for i in range(len(l_data)):
+        #print(i)
+        data = l_data[i][0]
+        id_cliente = l_data[i][1]
         
-        x = cursor.execute("""
-        SELECT *
+        dados_cliente = cursor.execute("""
+        SELECT nome, email, telefone
         FROM clientes
-        WHERE email=(?);
-        """,(k)).fetchall()
+        WHERE id=(?);
+        """,(id_cliente,)).fetchall()
 
-        l_dados.append(x[i])
-        
+    
+        avisos.append({"data":data, "nome":dados_cliente[0], "email":dados_cliente[1], "telefone":dados_cliente[2]})
+
     print(l_dados)
-    for i in range(len(l_email)):
-        avisos.append([l_data[i][0],l_dados[i][1],l_dados[i][2]])
-
-
 
 
     print(avisos)

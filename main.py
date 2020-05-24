@@ -20,12 +20,15 @@ def novo_pedido():
 def nova_contaminacao():
     """
     aviso = {"nome": '', "cpf": ''}
+    expostos = lista de dic 
     """
     #ler JSON entregador contaminado
     with open ("aviso.json", 'r') as avi:
         aviso = json.load(avi)
 
     expostos = buscar_clientes_contaminados(aviso[cpf])
+
+    mandar_email(expostos)
 
 
 def limpar():
