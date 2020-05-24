@@ -27,7 +27,7 @@ def nova_contaminacao(aviso):
     expostos = buscar_clientes_contaminados(aviso["cpf"])
     
     for entrega in expostos:
-        entrega[data] = entrega[data].strftime("%d/%m/%Y")
+        entrega['data'] = entrega['data']#.strftime("%d/%m/%Y")
 
         print("no primeiro for", entrega["email"])
         mandar_email(entrega["nome"], entrega["email"], entrega["data"])
