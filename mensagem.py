@@ -139,4 +139,56 @@ def mandar_email(nome, email, data):
         print(e)
     finally:
         server.quit() 
+
+
+def contato_empresa(nome = "ifood", email = "ifood@gmail.com", telefone="62964326893"):
+    sender_email = "hh.covid.alerta@gmail.com"
+    
+    message = MIMEMultipart("alternative")
+    smtp_server = "smtp.gmail.com"
+    port = 587  # For starttls
+    password = "covidzada"
+
+    receiver_email = "hh.eca.contato@gmail.com"
+    
+    nome = nome
+    email = email
+    telefone = telefone
+    
+    text = """\
+    Caro Quarenteca,
+    A empresa """ + nome + """ demonstrou interesse na iniciativa Covid-Alerta
+    email: """+ email +  """
+    telefone: """+ telefone +"""
+    """
+
+    # Turn these into plain/html MIMEText objects
+    part1 = MIMEText(text, "plain")
+
+    # Add HTML/plain-text parts to MIMEMultipart message
+    # The email client will try to render the last part first
+    message.attach(part1)
+
+
+    # Create a secure SSL context
+    context = ssl.create_default_context()
+
+    # Try to log in to server and send email
+    try:
+        server = smtplib.SMTP(smtp_server,port)
+        server.ehlo() # Can be omitted
+        server.starttls(context=context) # Secure the connection
+        server.ehlo() # Can be omitted
+        server.login(sender_email, password)
+        # TODO: Send email here
+        server.sendmail(sender_email, receiver_email, message.as_string())
+    except Exception as e:
+        # Print any error messages to stdout
+        print(e)
+    finally:
+        server.quit()
+
+
 #mandar_email()
+
+#contato_empresa()
