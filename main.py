@@ -1,7 +1,7 @@
 # vmo juntar as funcoes aqui
 import json
 from datetime import date, timedelta
-#from banco import adicionar_pedido, buscar_clientes_contaminados, limpar_pedidos_antigos
+from banco import adicionar_pedido, buscar_clientes_contaminados, limpar_pedidos_antigos
 from server import Server
 
 server = Server()
@@ -37,7 +37,7 @@ def limpar():
 
     limpar_pedidos_antigos(outro_dia)
     
-'''
+
 entrada = 'w'
 
 if entrada == "pedido":
@@ -45,8 +45,9 @@ if entrada == "pedido":
 
 else:
     #nova_contaminacao()
+    pass
 
-limpar()'''
+limpar()
 
 server.start()
 
