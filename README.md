@@ -15,7 +15,7 @@ O objetivo do Covid-Alerta é alertar aqueles que estiveram em contato com pesso
 
 #### O Produto
 
-O nosso serviço é voltado para empresas, de qualquer ramo, que trabalhem com entregadores. Com um sistema simples, realizamos algo único no mercado, auxiliando empresas no controle da epidemia, reconhecendo seu comprometimento com essa causa.  O sistema é dividido em três partes:
+O nosso serviço é voltado para empresas, de qualquer ramo, que trabalhem com entregadores. Com um sistema simples, realizamos algo único no mercado, auxiliando empresas no controle da epidemia, reconhecendo seu comprometimento com essa causa. O sistema é dividido em três partes:
 
 - 1ª Parte
 
