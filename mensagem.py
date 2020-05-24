@@ -24,7 +24,7 @@ def mandar_email(nome, email, data):
     text = """\
     Caro """ + nome + """,
 
-        Nós do grupo Covid Alerta gostariamos de informar que no dia """ + data + """ você esteve em contato com um caso suspeito de COVID-19 por meio de uma entrega realizada em sua residência.
+        Nós do grupo Covid Alerta gostariamos de informar que no dia """ + data + """ você esteve em contato com um caso suspeito de COVID-19 por meio de uma entrega realizada.
         Em vista disso, é necessário redobrar seus cuidados de isolamento pelos próximos 15 dias (ou pelo menos 15 dias desde a entrega), até mesmo dentro de sua casa, para que a doença não seja transmitida. 
 
         Fique atento aos sintomas nos próximos dias, que podem incluir:
@@ -41,8 +41,8 @@ def mandar_email(nome, email, data):
         https://coronavirus.saude.gov.br/sobre-a-doenca#se-eu-ficar-doente
 
 
-        A doença pelo novo coronavirus é altamente contagiosa, e pode ser tranmitida antes do inicio dos sintomas. a despeito de todos os cuidados para prevençao da tranmissao, ainda existe um risco minimo de contágio nesses contatos, de modo que
-        empresas e entregadores n podem ser responsabilizados poe eventual tramissao da doenças.  todos os trabalhadores envolvidos estao se arriscando para que tenhamos acesso à quilo q precisamos. devemos a eles o nosso respeito e admiraçao.
+        A doença pelo novo coronavirus é altamente contagiosa, e pode ser tranmitida antes do inicio dos sintomas. A despeito de todos os cuidados para prevenção da tranmissao, ainda existe um risco mínimo de contágio nesses contatos, de modo que
+        empresas e entregadores não podem ser responsabilizados por eventual tramissão da doenças.  Todos os trabalhadores envolvidos estão se arriscando para que tenhamos acesso àquilo que precisamos. Devemos a eles o nosso respeito e admiraçao.
 
         Nosso projeto visa a sua segurança e bem estar, assim como daqueles próximos a você. Sua participação é essencial para que possamos vencer o coronavírus e voltar à normalidade o mais rápido possivel. 
         Mais detalhes sobre nosso projeto e nossas parcerias podem ser encontrados por meio de nosso site, encaminhado abaixo.
