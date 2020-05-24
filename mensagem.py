@@ -8,6 +8,7 @@ def mandar_email():
     receiver_email = "luisa42.rodrigues@gmail.com" #email
     #thiagomoutinho19@poli.ufrj.br
     message = MIMEMultipart("alternative")
+    message['subject']= "Covid alerta tem um aviso para você"
     smtp_server = "smtp.gmail.com"
     port = 587  # For starttls
     sender_email = "hh.covid.alerta@gmail.com"
