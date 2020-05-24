@@ -13,8 +13,6 @@ O objetivo do Covid-Alerta é alertar aqueles que estiveram em contato com pesso
 
 
 
- *Use essa seção para falar sobre as motivações de seu time e, de forma breve, qual o produto que estão trabalhando. Se possível forneça **o que** seu produto é, por exemplo: Um app, uma aplicação web, gadget, dentre outros.*
-
 #### O Produto
 
 Os nossos serviço é voltado para empresas, de qualquer ramo, que tenham funcionários entregadores. Com um sistema enxuto e dividido em 3 partes principais. Realizamos algo único no mercado, auxiliando empresas no controle da epidemia sem associar seus nomes diratamente ao contágio.
@@ -32,12 +30,9 @@ Com essas mensagens, atualizamos nosso banco de dados e resgatamos o contato de 
 É enviado automaticamente um email para esses clientes, informando sobre o ocorrido e dando orientações.
 
 
-
-*Entre em mais detalhes sobre seu produto, levantando pontos positivos, o porquê dele ser inovador e como ele ajuda o Brasil e o mundo no combate e minimização de danos causados pela COVID-19.*
-
 #### Informações adicionais 
 
-Apesar 
+
 selo de comprometimento de combate ao corona.
 
 
