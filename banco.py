@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS clientes (
         id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         nome TEXT,
         email TEXT,
-        telefone
+        telefone INTEGER
 );
 """)
 
@@ -51,7 +51,7 @@ conn.commit()
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS entregas (
         id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-        data INTEGER,
+        data DATE,
         cpf_entregador INTEGER,
         email_cliente TEXT
 );
