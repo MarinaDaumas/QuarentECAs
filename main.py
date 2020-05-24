@@ -1,6 +1,6 @@
 # vmo juntar as funcoes aqui
 import simplejson as json
-from datetime import date, timedelta
+from datetime import date, time, timedelta
 from banco import adicionar_pedido, buscar_clientes_contaminados, limpar_pedidos_antigos
 
 
@@ -13,6 +13,8 @@ def novo_pedido():
     with open ("pedido.json", 'r') as ped:
         pedido = json.load(ped)
 
+        pedido["data"] = date.today() 
+    
     adicionar_pedido(pedido)
 
 def nova_contaminacao():
@@ -36,12 +38,11 @@ def limpar():
     limpar_pedidos_antigos(outro_dia)
     
 
-entrada = 'w'
 
 if entrada == "pedido":
     novo_pedido()
 
 else:
-    #nova_contaminacao()
+    nova_contaminacao()
 
 limpar()
