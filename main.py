@@ -15,17 +15,23 @@ def novo_pedido():
     with open ("pedido.json", 'r') as ped:
         pedido = json.load(ped)
 
+    pedido["data"] = date.today()
+    print(pedido)
     adicionar_pedido(pedido)
 
 def nova_contaminacao():
     """
     aviso = {"nome": '', "cpf": ''}
+    expostos = lista de dic 
     """
     #ler JSON entregador contaminado
     with open ("aviso.json", 'r') as avi:
         aviso = json.load(avi)
 
     expostos = buscar_clientes_contaminados(aviso[cpf])
+
+    for dados_entrega in expostos:
+        mandar_email(dados_entrega)
 
 
 def limpar():
@@ -38,10 +44,12 @@ def limpar():
     limpar_pedidos_antigos(outro_dia)
     
 
-entrada = 'w'
 
-if entrada == "pedido":
-    novo_pedido()
+# if entrada == "pedido":
+#     novo_pedido()
+
+# else:
+#     nova_contaminacao()
 
 else:
     #nova_contaminacao()

@@ -2,66 +2,44 @@
 # mandar emails 
   
 import sqlite3
+from datetime import date
 
 avisos = []
 l_dados = []
-id = 1
-CPF_c = 123
-CPF_e = 321
-nome_e = "evanilson"
-nome_c = "jorge"
-email_c = "kkk"
-data = 22
-cliente = 2
-telefone = 99999999
+
+
 
 conn = sqlite3.connect('covid.db')
 cursor = conn.cursor()
-####
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS entregadores (
-        cpf INTEGER PRIMARY KEY,
-        nome TEXT
-);
-""")
 
-cursor.execute("""
-INSERT INTO entregador (cpf,nome)
-VALUES (?,?)
-""", (CPF_e, nome_e))
-conn.commit()
-#
-####
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS clientes (
-        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-        nome TEXT,
-        email TEXT,
-        telefone INTEGER
-);
-""")
+def criar_tabelas():
 
-cursor.execute("""
-INSERT INTO cliente (nome,email,telefone)
-VALUES (?,?,?)
-""", (nome_c,email_c,telefone))
-conn.commit()
-#
-#####
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS entregas (
-        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-        data DATE,
-        cpf_entregador INTEGER,
-        email_cliente TEXT
-);
-""")
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS entregadores (
+            cpf INTEGER PRIMARY KEY,
+            nome TEXT
+    );
+    """)
 
-cursor.execute("""
-INSERT INTO entregas (data)
-VALUES (?)
-""", (data,cpf_e,email_c))
-conn.commit()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS clientes (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            nome TEXT,
+            email TEXT,
+            telefone INTEGER
+    );
+    """)
+
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS entregas (
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+            data DATE,
+            cpf_entregador INTEGER,
+            id_cliente INTEGER
+    );
+    """)
 
 
 
@@ -71,17 +49,21 @@ def checar_cliente(cliente):
     Input: entregador = dicionario com todos os dados do cliente
     Output: id_cliente
     """
-    email = cursor.execute("""
-    SELECT nome
-    FROM clientes
-    WHERE cpf=(?);
-    """,(cliente[1],)).fetchall()
 
-    if email == []:
+    # Por enquanto apenas clientes cadastrados com email. Adaptar para telefone mais tarde
+    
+    email = cliente[1] 
+
+    id_cliente = cursor.execute("""
+    SELECT id
+    FROM clientes
+    WHERE email=(?);
+    """,(email,)).fetchall()
+
+    if id_cliente == []:
         id_cliente = adicionar_clientes(cliente)
-        return id_cliente
-    else:
-        return email
+    
+    return id_cliente
         
 
 def checar_entregador(entregador):
@@ -90,54 +72,73 @@ def checar_entregador(entregador):
     Input: entregador = dicionario com todos os dados do entregador
     Output: id_entregador
     """
+    cpf = entregador[1]
+
     cpf = cursor.execute("""
     SELECT cpf
     FROM entregadores
     WHERE cpf=(?);
-    """,(entregador[1],)).fetchall()
+    """,(cpf,)).fetchall()
 
     if cpf == []:
-        id_entregador = adicionar_entregador(entregador)
-        return id_entregador
-    else:
-        return cpf 
+        cpf = adicionar_entregador(entregador)
+
+    return cpf 
         
 
 def adicionar_clientes(cliente):
     """
     Adiciona cadastro do novo cliente ao banco.
     """
+    nome = cliente[0]
+    email = cliente[1]
+    telefone = cliente[2]
+
     cursor.execute("""
-    INSERT INTO cliente (nome,email,telefone)
+    INSERT INTO clientes (nome,email,telefone)
     VALUES (?,?,?)
-    """, (cliente[0],cliente[1],cliente[2]))
+    """, (nome, email, telefone))
     conn.commit()
-    return cliente[1]
+
+    id_cliente = cursor.execute("""
+    SELECT id
+    FROM clientes
+    WHERE nome=(?);
+    """,(nome,)).fetchall()
+
+    return id_cliente
 
 
 def adicionar_entregador(entregador):
     """
     Adiciona cadastro do novo entregador ao banco.
     """
+
+    cpf = entregador[1]
+    nome = entregador[0]
+
     cursor.execute("""
-    INSERT INTO entregador (cpf,nome)
+    INSERT INTO entregadores (cpf,nome)
     VALUES (?,?)
-    """, (entregador[1], entregador[0]))
+    """, (cpf, nome))
     conn.commit()
-    return entregador[1]
+
+    return cpf
 
 
 def adicionar_pedido(pedido):
     """
     Adiciona dados do novo pedido.
     """
-    id_cliente = checar_cliente(pedido[cliente]) 
-    id_entregador = checar_entregador(pedido[entregador])   
+    id_cliente = checar_cliente(pedido["cliente"]) 
+    id_entregador = checar_entregador(pedido["entregador"])   
 
+    data = pedido['data']
+    #print(data, id_cliente[0][0], id_entregador[0][0])
     cursor.execute("""
-    INSERT INTO entregas (data)
-    VALUES (?)
-    """, (pedido,id_entregador,id_cliente))
+    INSERT INTO entregas (data, cpf_entregador, id_cliente)
+    VALUES (?, ?, ?)
+    """, (data, id_entregador[0][0], id_cliente[0][0]))
     conn.commit()
 
     
@@ -148,7 +149,12 @@ def limpar_pedidos_antigos(data):
     Apaga do banco registros de pedidos feitos a mais de 15.
     Input: data = data mais antiga a nao ser apagada
     """
-    pass
+    
+    cursor.execute("""
+    DELETE FROM entregas
+    WHERE data<=(?);
+    """,(data,))
+    conn.commit()
 
 
 def buscar_clientes_contaminados(cpf_entregador):
@@ -159,31 +165,28 @@ def buscar_clientes_contaminados(cpf_entregador):
     """
 
     l_data = cursor.execute("""
-    SELECT data
+    SELECT data, id_cliente
     FROM entregas
-    WHERE cpf=(?);
+    WHERE cpf_entregador=(?);
     """,(cpf_entregador,)).fetchall()
+    conn.commit()
+   
+    avisos = []
 
-    l_email = cursor.execute("""
-    SELECT email
-    FROM entregas
-    WHERE cpf=(?);
-    """,(cpf_entregador,)).fetchall()
-
-    for i in l_email:
-        x = cursor.execute("""
-        SELECT *
-        FROM clientes
-        WHERE email=(?);
-        """,(l_email[i])).fetchall()
-
-        l_dados.append(x[i])
+    for i in range(len(l_data)):
+        #print(i)
+        data = l_data[i][0]
+        id_cliente = l_data[i][1]
         
+        dados_cliente = cursor.execute("""
+        SELECT nome, email, telefone
+        FROM clientes
+        WHERE id=(?);
+        """,(id_cliente,)).fetchall()
 
-    for i in len(l_email):
-        avisos.append([l_data[i],l_dados[i][1],l_dados[i][2]])
+           
+        avisos.append({"data":data, "nome":dados_cliente[0][0], "email":dados_cliente[0][1], "telefone":dados_cliente[0][2]})
 
+    #print(avisos)
+    return avisos
 
-
-
-    print(avisos)
