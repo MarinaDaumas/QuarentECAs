@@ -13,7 +13,7 @@ def mandar_email(nome, email, data):
     smtp_server = "smtp.gmail.com"
     port = 587  # For starttls
     sender_email = "hh.covid.alerta@gmail.com"
-    password = "covidzada"
+    password = "covidzeca"
 
     #nome = "thiaguinho"
     #data = "20/05"
@@ -147,7 +147,7 @@ def contato_empresa(nome = "ifood", email = "ifood@gmail.com", telefone="6296432
     message = MIMEMultipart("alternative")
     smtp_server = "smtp.gmail.com"
     port = 587  # For starttls
-    password = "covidzada"
+    password = "covidzeca"
 
     receiver_email = "hh.eca.contato@gmail.com"
     

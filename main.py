@@ -1,7 +1,7 @@
 # vmo juntar as funcoes aqui
 import json
 from datetime import date, timedelta
-from banco import adicionar_pedido, buscar_clientes_contaminados, limpar_pedidos_antigos
+from banco import adicionar_pedido, buscar_clientes_contaminados, limpar_pedidos_antigos, criar_tabelas
 from mensagem import mandar_email
 
 def novo_pedido(pedido):
@@ -44,6 +44,7 @@ def limpar():
 # {"cliente":[nome_c, email, telefone], "entregador":[nome_e, cpf]}
 
 def main(msg):
+    criar_tabelas()
     limpar()
     print("type: ", type(msg), " and msg: ", msg)
     if msg.get("cliente", 0):
