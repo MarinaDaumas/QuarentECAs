@@ -9,16 +9,6 @@ l_dados = []
 
 
 
-id = 1
-CPF_c = 123
-CPF_e = 3214
-nome_e = "evanilson"
-nome_c = "jorge"
-email_c = "kkk"
-data = 22
-cliente = 2
-telefone = 99999999
-
 conn = sqlite3.connect('covid.db')
 cursor = conn.cursor()
 
@@ -111,17 +101,10 @@ def adicionar_clientes(cliente):
     conn.commit()
 
     id_cliente = cursor.execute("""
-<<<<<<< HEAD
     SELECT id
     FROM clientes
     WHERE nome=(?);
     """,(nome,)).fetchall()
-=======
-        SELECT id
-        FROM clientes
-        WHERE email=(?);
-        """,(email,)).fetchall()
->>>>>>> db1de839602c5f7137698cc18e567eea0864056d
 
     return id_cliente
 
@@ -133,13 +116,6 @@ def adicionar_entregador(entregador):
 
     cpf = entregador[1]
     nome = entregador[0]
-<<<<<<< HEAD
-    '''
-    print(type(cpf))
-    print(type(nome))
-    '''
-=======
->>>>>>> db1de839602c5f7137698cc18e567eea0864056d
 
     cursor.execute("""
     INSERT INTO entregadores (cpf,nome)
@@ -154,7 +130,6 @@ def adicionar_pedido(pedido):
     """
     Adiciona dados do novo pedido.
     """
-<<<<<<< HEAD
     id_cliente = checar_cliente(pedido['cliente']) 
     id_entregador = checar_entregador(pedido['entregador'])   
 
@@ -162,13 +137,6 @@ def adicionar_pedido(pedido):
     id_entregador = id_entregador[0][0]
     data = pedido['data']
 
-=======
-    id_cliente = checar_cliente(pedido["cliente"]) 
-    id_entregador = checar_entregador(pedido["entregador"])   
-
-    data = pedido['data']
-    #print(data, id_cliente[0][0], id_entregador[0][0])
->>>>>>> db1de839602c5f7137698cc18e567eea0864056d
     cursor.execute("""
     INSERT INTO entregas (data, cpf_entregador, id_cliente)
     VALUES (?, ?, ?)
@@ -218,11 +186,7 @@ def buscar_clientes_contaminados(cpf_entregador):
         WHERE id=(?);
         """,(id_cliente,)).fetchall()
 
-<<<<<<< HEAD
-    
-=======
            
->>>>>>> db1de839602c5f7137698cc18e567eea0864056d
         avisos.append({"data":data, "nome":dados_cliente[0][0], "email":dados_cliente[0][1], "telefone":dados_cliente[0][2]})
 
     #print(avisos)

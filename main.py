@@ -28,7 +28,8 @@ def nova_contaminacao():
 
     expostos = buscar_clientes_contaminados(aviso[cpf])
 
-    mandar_email(expostos)
+    for dados_entrega in expostos:
+        mandar_email(dados_entrega)
 
 
 def limpar():
