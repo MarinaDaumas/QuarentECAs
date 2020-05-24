@@ -43,18 +43,15 @@ A vantagem para a empresa consiste em ser reconhecida pela sua transparência e 
 
 Siga os passos abaixo para testar:
 
-- 1°- Baixe ou clone o repositório em uma pasta
-- 2°- Abra duas abas do seu terminal e entre na pasta em que está o arquivo
-- 3°- Abra o seu visualizador de código e vá no final do código de client.py e escolha qual função deseja fazer inicialmente
-- 4°- Volte para os terminais e digite em um o seguinte comando:
+- 1°- Baixe ou clone o repositório em uma pasta.
+- 2°- Abra duas abas do seu terminal.
+- 3°- Escreva em um terminal o seguinte comando, ele retornará seu ip que será necessário na próxima etapa:
     - python3 server.py
-    - Ele te dará um ip que deve ser copiado e colado no arquivo client.py na linha que tem escrito server='algum numero' e que não está comentada
-    - Após isso cancele o processo no seu terminal e rode de novo o mesmo comando
-    - No segundo terminal digite o seguinte comando:
-        python3 client.py
-    - Após preencher a primeira vez,volte em client.py, descomente a última linha e comente a de cima então rode o comando à cima no segundo terminal
- 
- Obs: Deve ser utilizado o python 3 para rodar os arquivo, além disso pode ser que no seu computador só seja necessário escrever py na hora de digitar o código
+    - OBS: o estilo do número é XXX.X.X.X
+- 4°- Abra o outro terminal, digite o seguinte código e responda as perguntas que serão feitas:
+    - python3 client.py
+- 5°- Ao final desse proscesso você deve receber um email com o aviso.
+ Obs: Deve ser utilizado o python 3 para rodar os arquivo, além disso pode ser que no seu computador só seja necessário escrever py na hora de digitar o código.
 
 
 

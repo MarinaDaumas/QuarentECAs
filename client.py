@@ -10,7 +10,8 @@ class CLIENTE:
     FORMAT = 'utf-8'
     DISCONNECT_MESSAGE = "!DISCONNECT"
     #SERVER = '189.5.178.202' # public ip
-    SERVER = '127.0.1.1'
+    #SERVER = '127.0.5.5'
+    SERVER = str(input(' Digite seu ip, não esqueça os pontos \n'))
     ADDR = (SERVER, PORT)
 
 
@@ -49,7 +50,5 @@ class CLIENTE:
 
 client = CLIENTE()
 
-#####Sempre deixe uma das linhas aabaixo comentada#####
-
 client.send(send_msg()) #função para cadastrar um pedido
-#client.send(send_aviso()) #função para mandar o alerta de que o entregador foi contaminado
+client.send(send_aviso()) #função para mandar o alerta de que o entregador foi contaminado
