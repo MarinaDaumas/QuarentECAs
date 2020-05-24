@@ -11,6 +11,7 @@ def quem_somos():
 @app.route("/contato")
 def contate_nos():
 	return render_template("contato.html")
+
     
 @app.route("/obrigado", methods=["POST", "GET"])
 def obrigado():
@@ -26,12 +27,6 @@ def obrigado():
             return'request deu ruim'
     else:
         return "não entrou no metódo do request certo"
-
-
-@app.route("/<name>")
-def user(name):
-	return f"Hello {name}!"
-
 
 
 if __name__ == "__main__":
