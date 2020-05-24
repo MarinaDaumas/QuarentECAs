@@ -9,19 +9,19 @@ def quem_somos():
 
 @app.route("/contanenos")
 def contate_nos():
-	return 'home'
+	return render_template("contato.html")
 
 @app.route("/obrigado", methods=["POST", "GET"])
 def obrigado():
-    if request.method == "GET":
+    if request.method == "POST":
         try:
             print(request.form)
             user = request.form["name"]
-            return f'OBRIGADO {user}'
+            return render_template("obrigado.html")
         except:
             return'request deu ruim'
     else:
-        return 'outro'
+        return "não entrou no metódo do request certo"
 
 
 @app.route("/<name>")
