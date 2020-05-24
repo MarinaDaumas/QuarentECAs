@@ -1,4 +1,5 @@
 # vmo juntar as funcoes aqui
+# -*- coding: utf-8 -*-
 import json
 from datetime import date, timedelta
 from banco import adicionar_pedido, buscar_clientes_contaminados, limpar_pedidos_antigos
@@ -26,6 +27,8 @@ def nova_contaminacao(aviso):
     expostos = buscar_clientes_contaminados(aviso["cpf"])
     
     for entrega in expostos:
+        entrega[data] = entrega[data].strftime("%d/%m/%Y")
+
         print("no primeiro for", entrega["email"])
         mandar_email(entrega["nome"], entrega["email"], entrega["data"])
 

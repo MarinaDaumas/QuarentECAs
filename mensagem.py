@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -13,7 +14,7 @@ def mandar_email(nome, email, data):
     smtp_server = "smtp.gmail.com"
     port = 587  # For starttls
     sender_email = "hh.covid.alerta@gmail.com"
-    password = "covidzada"
+    password = "covidzeca"
 
     #nome = "thiaguinho"
     #data = "20/05"
@@ -22,7 +23,7 @@ def mandar_email(nome, email, data):
     data = data
         
     text = """\
-    Caro """ + nome + """,
+    Caro(a) """ + nome + """,
 
         Nós do grupo Covid Alerta gostariamos de informar que no dia """ + data + """ você esteve em contato com um caso suspeito de COVID-19 por meio de uma entrega realizada.
         Em vista disso, é necessário redobrar seus cuidados de isolamento pelos próximos 15 dias (ou pelo menos 15 dias desde a entrega), até mesmo dentro de sua casa, para que a doença não seja transmitida. 
@@ -34,7 +35,7 @@ def mandar_email(nome, email, data):
         -Tosse 
         -Dificuldade Respiratória
 
-        Solicitamos q entre em contato com o numero 136 para informar sobre esta notificação e obter orienteções.
+        Solicitamos que entre em contato com o numero 136 para informar sobre esta notificação e obter orienteções.
 
         Para mais informações sobre a doença e procedimentos, acessar o site abaixo:
 
@@ -76,11 +77,11 @@ def mandar_email(nome, email, data):
     <div>
         <div style="margin: 0 auto;"> <img src="https://www.solidbackgrounds.com/images/1920x1080/1920x1080-dark-midnight-blue-solid-color-background.jpg" alt="Logo" title="Logo" style="display:block" width="550" height="150" /></div><br>
 
-        <div class="caro" style= "font-weight: bold; margin-left: 4%;"> Caro """ + nome + """,</div> 
+        <div class="caro" style= "font-weight: bold; margin-left: 4%;"> Caro(a) """ + nome + """,</div> 
         <p style="text-align: left; margin: 5%;">
-        Nós do grupo Covid Alerta gostariamos de informar que no dia """ + data + """ você esteve em contato com um caso confirmado de COVID-19 por meio de uma entrega realizada em sua residência.<br>
+        Nós do grupo Covid Alerta gostariamos de informar que no dia """ + data + """ você esteve em contato com um caso suspeito de COVID-19 por meio de uma entrega realizada.<br>
         Em vista disso, é necessário redobrar seus cuidados de isolamento pelos próximos 15 dias (ou pelo menos 15 dias desde a entrega), até mesmo dentro de sua casa, para que a doença não seja transmitida. 
-        Fique antento aos sintomas nos próximos dias, que podem incluir:<br>
+        Fique atento aos sintomas nos próximos dias, que podem incluir:<br>
         </p>
         <div style= "font-weight: bold; margin-left: 6%;">
         <ul>
@@ -91,14 +92,15 @@ def mandar_email(nome, email, data):
         </ul> 
         </div>
 
+        <p style="text-align: left; margin: 5%;">Solicitamos que entre em contato com o numero 136 para informar sobre esta notificação e obter orienteções.</p>
+
         <p style="text-align: left; margin: 5%;">Para mais informações sobre a doença e procedimentos, acessar o site abaixo:</p>
     
         <a href="https://coronavirus.saude.gov.br/sobre-a-doenca#se-eu-ficar-doente" style="text-align: left; margin-left: 10%; font-weight: bold; text-size: 30px;"> Informativo Covid-19
         </a><br>
 
-        <p style="text-align: left; margin: 5%;"> É importante também lembrar que as empresas, restaurantes, entregadores e etc, não carregam a culpa da transmissão.
-        O novo Coronavirus é uma doença altamente contagiosa e pode ser pega até mesmo por aqueles que tomam os devidos cuidados.
-        Esses trabalhadores estão se arriscando para que ainda possamos ter acesso a aquilo que precisamos e nós devemos ter respeito pela coragem deles.</p>
+        <p style="text-align: left; margin: 5%;">A doença pelo novo coronavirus é altamente contagiosa, e pode ser tranmitida antes do inicio dos sintomas. A despeito de todos os cuidados para prevenção da tranmissao, ainda existe um risco mínimo de contágio nesses contatos, de modo que
+        empresas e entregadores não podem ser responsabilizados por eventual tramissão da doenças. Todos os trabalhadores envolvidos estão se arriscando para que tenhamos acesso àquilo que precisamos. Devemos a eles o nosso respeito e admiraçao.</p>
         <p style="text-align: left; margin: 5%;"> Nosso projeto visa a sua segurança e bem estar, assim como daqueles próximos a você. Sua participação é essencial para que possamos vencer o coronavírus e voltar à normalidade o mais rápido possivel. 
         Mais detalhes sobre nosso projeto e nossas parcerias podem ser encontradas por meio de nosso site, encaminhado abaixo.</p>
         <a href="https://coronavirus.saude.gov.br/sobre-a-doenca#se-eu-ficar-doente" style="text-align: left; margin-left: 10%; font-weight: bold; text-size: 30px;"> Nosso Site </a> <br> 
@@ -147,7 +149,7 @@ def contato_empresa(nome = "ifood", email = "ifood@gmail.com", telefone="6296432
     message = MIMEMultipart("alternative")
     smtp_server = "smtp.gmail.com"
     port = 587  # For starttls
-    password = "covidzada"
+    password = "covidzeca"
 
     receiver_email = "hh.eca.contato@gmail.com"
     
