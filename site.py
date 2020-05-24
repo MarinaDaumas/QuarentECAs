@@ -14,9 +14,12 @@ def contate_nos():
 @app.route("/obrigado", methods=["POST", "GET"])
 def obrigado():
     if request.method == "GET":
-        print(request.form)
-        user = request.form["name"]
-        return f'OBRIGADO {user}'
+        try:
+            print(request.form)
+            user = request.form["name"]
+            return f'OBRIGADO {user}'
+        except:
+            return'request deu ruim'
     else:
         return 'outro'
 
