@@ -2,31 +2,24 @@
 import json
 from datetime import date, timedelta
 from banco import adicionar_pedido, buscar_clientes_contaminados, limpar_pedidos_antigos
-from server import Server
 
-server = Server()
 
-def novo_pedido():
+def novo_pedido(pedido):
     """
-    pedido = {"data" = data, "entregador":[nome, cpf], "cliente":[nome, email, telefone]}
+    pedido = {"entregador":[nome, cpf], "cliente":[nome, email, telefone]}
     data = AAAA-MM-DD
     """
-    # ler JSON no caso de cada novo pedido ser um json
-    with open ("pedido.json", 'r') as ped:
-        pedido = json.load(ped)
 
     pedido["data"] = date.today()
     print(pedido)
     adicionar_pedido(pedido)
 
-def nova_contaminacao():
+def nova_contaminacao(aviso):
     """
     aviso = {"nome": '', "cpf": ''}
     expostos = lista de dic 
     """
     #ler JSON entregador contaminado
-    with open ("aviso.json", 'r') as avi:
-        aviso = json.load(avi)
 
     expostos = buscar_clientes_contaminados(aviso[cpf])
 
@@ -35,7 +28,6 @@ def nova_contaminacao():
 
 
 def limpar():
-
     # data AAAA-MM-DD 
     hoje = date.today()
     tempo = timedelta(days=15)
@@ -43,6 +35,15 @@ def limpar():
 
     limpar_pedidos_antigos(outro_dia)
     
+# {"cliente":[nome_c, email, telefone], "entregador":[nome_e, cpf]}
+
+def main(msg):
+    limpar()
+    print("type: ", type(msg), " and msg: ", msg)
+    if msg.get("cliente", 0):
+        novo_pedido(msg)
+    else:
+        nova_contaminacao(msg)
 
 
 # if entrada == "pedido":
@@ -51,12 +52,4 @@ def limpar():
 # else:
 #     nova_contaminacao()
 
-else:
     #nova_contaminacao()
-    pass
-
-limpar()
-
-server.start()
-
-

@@ -1,6 +1,7 @@
 import socket
 import pickle
 from escrever_pedido import send_msg
+from escrever_aviso import send_aviso
 import json
 
 class CLIENTE:
@@ -47,4 +48,4 @@ class CLIENTE:
 
 
 client = CLIENTE()
-client.send(send_msg())
+client.send(send_aviso())

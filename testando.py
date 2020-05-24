@@ -18,4 +18,4 @@ if __name__ == "__main__":
     adicionar_pedido(pedido)
     '''
     #buscar_clientes_contaminados(175855)
-    limpar()
+    #limpar()

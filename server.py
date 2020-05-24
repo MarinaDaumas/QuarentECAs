@@ -3,7 +3,7 @@ import socket
 import threading
 import pickle # para serializar objetos e poder mandá-los
 import json
-import main
+from main import main
 
 class Server():
     HEADER = 10 # serve para descobrir o tamanho da mensagem, PODE SER PEQUENO
@@ -40,10 +40,12 @@ class Server():
                 msg = pickle.loads(msg)
                 msg = json.loads(msg)
                 print(msg)
+                main(msg)
 
             else:
                 print('sem conexao')
                 break
+
 
         conn.close
 
@@ -68,3 +70,6 @@ class Server():
             thread.start() 
             
             print("começou")
+
+server = Server()
+server.start()
