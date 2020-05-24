@@ -1,9 +1,9 @@
 import socket
 import pickle
-from escrever_pedido import send_json
+from escrever_pedido import send_msg
 import json
 
-class CLIENT:
+class CLIENTE:
     HEADER = 10 # serve para descobrir o tamanho da mensagem, PODE SER PEQUENO
     PORT = 5050
     FORMAT = 'utf-8'
@@ -12,31 +12,29 @@ class CLIENT:
     SERVER = '192.168.0.11'
     ADDR = (SERVER, PORT)
 
-    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client.connect(ADDR)
+
+    def __init__(self):
+        self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.client.connect(self.ADDR)
+        self.receive()
 
     def send(self, msg):
-
-            message = pickle.dumps(msg)
-            
-            send_length = len(message)
-
-            send_length = bytes(f"{send_length:<{self.HEADER}}", self.FORMAT)
-
-            client.send(send_length)
-            client.send(message)
+        msg = json.dumps(msg)
+        message = pickle.dumps(msg)
+        send_length = len(message)
+        send_length = bytes(f"{send_length:<{self.HEADER}}", self.FORMAT)
+        self.client.send(send_length)
+        self.client.send(message)
 
     def receive(self):
-        msg_length = client.recv(self.HEADER).decode(self.FORMAT) # espera a mensagem do cliente
+        msg_length = self.client.recv(self.HEADER).decode(self.FORMAT) # espera a mensagem do cliente
         
         if msg_length:
             msg_length = int(msg_length)
-
-            msg = client.recv(msg_length)
-            
+            msg = self.client.recv(msg_length)
             msg = pickle.loads(msg)
 
-            if msg == DISCONNECT_MESSAGE:
+            if msg == self.DISCONNECT_MESSAGE:
                 connected = False
             
             msg = json.loads(msg)
@@ -45,5 +43,8 @@ class CLIENT:
                 print(msg["cliente"][0])
             
             print(msg)
-
             return msg
+
+
+client = CLIENTE()
+client.send(send_msg())

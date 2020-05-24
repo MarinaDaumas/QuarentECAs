@@ -3,7 +3,7 @@ from datetime import date
 import pickle
 
 
-def send_json():
+def send_msg():
     nome_c = "Marcos Andrade"
     email = "marcos.andr@hotmail.com"
     telefone = 5521985009719
@@ -22,7 +22,6 @@ def send_json():
 
     file_name = "novo_pedido.json"
 
-    pedido = json.dumps(pedido)
     return pedido
 
 #print(send_json(pedido))
