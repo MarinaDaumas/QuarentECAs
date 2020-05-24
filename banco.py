@@ -130,13 +130,11 @@ def adicionar_pedido(pedido):
     """
     Adiciona dados do novo pedido.
     """
-    id_cliente = checar_cliente(pedido['cliente']) 
-    id_entregador = checar_entregador(pedido['entregador'])   
+    id_cliente = checar_cliente(pedido["cliente"]) 
+    id_entregador = checar_entregador(pedido["entregador"])   
 
-    id_cliente = id_cliente[0][0]
-    id_entregador = id_entregador[0][0]
     data = pedido['data']
-
+    #print(data, id_cliente[0][0], id_entregador[0][0])
     cursor.execute("""
     INSERT INTO entregas (data, cpf_entregador, id_cliente)
     VALUES (?, ?, ?)
