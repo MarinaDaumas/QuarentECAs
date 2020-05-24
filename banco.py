@@ -104,12 +104,16 @@ def adicionar_clientes(cliente):
     telefone = cliente[2]
 
     cursor.execute("""
-    INSERT INTO cliente (nome,email,telefone)
+    INSERT INTO clientes (nome,email,telefone)
     VALUES (?,?,?)
     """, (nome, email, telefone))
     conn.commit()
 
-    id_cliente = #pegar id cliente
+    id_cliente = cursor.execute("""
+    SELECT id
+    FROM clientes
+    WHERE nome=(?);
+    """,(nome,)).fetchall()
 
     return id_cliente
 
@@ -120,10 +124,14 @@ def adicionar_entregador(entregador):
     """
 
     cpf = entregador[1]
-    nome = [0]
+    nome = entregador[0]
+    '''
+    print(type(cpf))
+    print(type(nome))
+    '''
 
     cursor.execute("""
-    INSERT INTO entregador (cpf,nome)
+    INSERT INTO entregadores (cpf,nome)
     VALUES (?,?)
     """, (cpf, nome))
     conn.commit()
@@ -135,10 +143,13 @@ def adicionar_pedido(pedido):
     """
     Adiciona dados do novo pedido.
     """
-    id_cliente = checar_cliente(pedido[cliente]) 
-    id_entregador = checar_entregador(pedido[entregador])   
+    id_cliente = checar_cliente(pedido['cliente']) 
+    id_entregador = checar_entregador(pedido['entregador'])   
 
-    data = pedido[data]
+    id_cliente = id_cliente[0][0]
+    id_entregador = id_entregador[0][0]
+    data = pedido['data']
+
     cursor.execute("""
     INSERT INTO entregas (data, cpf_entregador, id_cliente)
     VALUES (?, ?, ?)
@@ -189,9 +200,7 @@ def buscar_clientes_contaminados(cpf_entregador):
         """,(id_cliente,)).fetchall()
 
     
-        avisos.append({"data":data, "nome":dados_cliente[0], "email":dados_cliente[1], "telefone":dados_cliente[2]})
-
-    print(l_dados)
+        avisos.append({"data":data, "nome":dados_cliente[0][0], "email":dados_cliente[0][1], "telefone":dados_cliente[0][2]})
 
 
     print(avisos)
