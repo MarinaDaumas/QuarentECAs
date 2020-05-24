@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from mensagem import contato_empresa
 
 app = Flask(__name__)
 
@@ -7,7 +8,7 @@ def quem_somos():
     return render_template("home.html")
 
 
-@app.route("/contanenos")
+@app.route("/contatenos")
 def contate_nos():
 	return render_template("contato.html")
 
@@ -16,7 +17,10 @@ def obrigado():
     if request.method == "POST":
         try:
             print(request.form)
-            user = request.form["name"]
+            name = request.form["name"]
+            email = request.form["email"]
+            telefone = request.form["telefone"]
+            contato_empresa(name, email, telefone)
             return render_template("obrigado.html")
         except:
             return'request deu ruim'
