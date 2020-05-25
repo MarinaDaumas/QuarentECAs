@@ -8,6 +8,7 @@ def quem_somos():
     return render_template("home.html")
 
 
+
 @app.route("/contato")
 def contate_nos():
 	return render_template("contato.html")

@@ -9,7 +9,7 @@ class CLIENTE:
     PORT = 5050
     FORMAT = 'utf-8'
     DISCONNECT_MESSAGE = "!DISCONNECT"
-    SERVER = "162.198.0.29"
+    SERVER = "192.168.0.29"
     ADDR = (SERVER, PORT)
 
 
