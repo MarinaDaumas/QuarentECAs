@@ -15,7 +15,7 @@ O objetivo do Covid-Alerta é alertar aqueles que estiveram em contato com pesso
 
 #### O Produto
 
-O nosso serviço é voltado para empresas, de qualquer ramo, que trabalhem com entregadores. Com um sistema simples, realizamos algo único no mercado, auxiliando empresas no controle da epidemia, reconhecendo seu comprometimento com essa causa.  O sistema é dividido em três partes:
+O nosso serviço é voltado para empresas, de qualquer ramo, que trabalhem com entregadores. Com um sistema simples, realizamos algo único no mercado, auxiliando empresas no controle da epidemia, reconhecendo seu comprometimento com essa causa. O sistema é dividido em três partes:
 
 - 1ª Parte
 
@@ -41,18 +41,27 @@ A vantagem para a empresa consiste em ser reconhecida pela sua transparência e 
 
 #### Instruções para teste do MVP
 
+Exemplo do que aconteceria no caso de um entregador doente logo após a entrega de um pedido.
+
 Siga os passos abaixo para testar:
 
 - 1°- Baixe ou clone o repositório em uma pasta.
 - 2°- Abra duas abas do seu terminal.
-- 3°- Escreva em um terminal o seguinte comando, ele retornará seu ip que será necessário na próxima etapa:
-    - python3 server.py
-    - OBS: o estilo do número é XXX.X.X.X
-- 4°- Abra o outro terminal, digite o seguinte código e responda as perguntas que serão feitas:
-    - python3 client.py
-- 5°- Ao final desse proscesso você deve receber um email com o aviso.
- Obs: Deve ser utilizado o python 3 para rodar os arquivo, além disso pode ser que no seu computador só seja necessário escrever py na hora de digitar o código.
+- 3°- Escreva em um terminal o seguinte comando, ele retornará seu ip que será necessário na próxima etapa.
+     - OBS: a forma do número é XXX.X.X.X.
+```bash 
+python3 server.py
 
+```
+- 4°- Abra o outro terminal, digite o seguinte código e responda as perguntas esses dados serão os dados do cliente.
+```bash
+python3 client.py
+```
+- 5°- Ao final desse proscesso você deve receber um email com o aviso.
+
+ Obs1: Deve ser utilizado o python 3 para rodar os arquivo, além disso pode ser que no seu computador só seja necessário escrever py na hora de digitar o código.
+
+ Obs2: Para editar outros dados, como os dados do entregador, modifique as funções escrever_aviso.py ou escrever_pedido.py
 
 
 #### Bibliografia
@@ -61,3 +70,5 @@ Siga os passos abaixo para testar:
  
 
 2 -[Estadão, Pessoas não diagnosticadas com novo coronavírus são as maiores responsáveis por disseminar a pandemia](https://saude.estadao.com.br/noticias/geral,pessoas-nao-diagnosticadas-com-novo-coronavirus-sao-as-maiores-responsaveis-por-disseminar-epidemia,70003235348)
+
+

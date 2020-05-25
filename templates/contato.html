@@ -1,24 +1,193 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-    </head>
-    <nav>
-        <a href="./">ECA</a>
-        <a href="./contato">Entre em contato conosco</a>
-      </nav><br>
-    <body>
-        <div>Preenchendo suas informações, entraremos em contato te explicando tudo</div><br>
-        <h1>Preencha o Formulário</h1>
-        <form action="/obrigado" method=POST>
-            <div class="tit">Nome da Empresa</div>
-            <input type="text" name ="name" id="name" ><br>
-            <div class="tit">Email de contato</div>
-            <input type="email" name ="email" id="email" ><br>
-            <div class="tit">Telefone</div>
-            <input type="number" name ="telefone" id="telefone"><br>
-            <div class="tit">Enviar</div>
-            <input type="submit" >
-        </form>
-    </body>
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 100px 1fr 40px;
+      grid-template-areas: "header" "main" "footer";
+      height: 100vh;      
+    }
     
-</html>
+    header {
+      grid-area: header;
+      background-color:lightblue;
+      
+    }
+
+    main {
+      grid-area: main;
+      background-color: #efefef;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #e23939;
+    }
+
+    .card-container {
+      margin-top: var(--margin-cards);
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      /* break line */
+      flex-wrap: wrap;
+    }
+
+    .card {
+      position: relative;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      transition: all 0.6s cubic-bezier(.25, .8, .25, 1);
+      margin: 2rem;
+      padding: 20px;
+      width: 600px;
+      min-height: 300px;
+
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+  }
+
+  .card:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  p.titulo {
+    font-weight: bold;
+    font-size: 1.8em;
+  }
+
+  .lista-projetos {
+    list-style: none; 
+  }
+
+  img {
+    position: absolute;
+    top: -60px;
+    left: -100px;
+    width: 350px;
+  }
+
+ nav
+ {
+    left:-50px;
+ }
+  .contato {
+    margin-top: 25px;
+    margin-left: 45%;
+    text-align: center;
+    background-color: #fff ;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  nav :hover{
+    background-color: rgb(212, 212, 212);
+  }
+
+  .tparceiro{
+    font-weight: bold;
+    font-size: 17px;
+    border:none;
+    padding-top: 0px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+  }
+
+  .tit
+    {
+       text-align: left; 
+       height: 30px;
+    }
+
+input[type=text], select, input[type=email]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 600px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #e45353;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #e23939;
+}
+
+.qteca {
+    float: right;
+    font-size: 18px;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <header>
+      <a href="./home.html"><img style="left:0px" src="../static/img/logomelhor.png" alt="logo"></a>
+      <nav>
+        <div class="contato">
+        <a href="./home.html"class="tparceiro" >Voltar</a>
+        </div>
+    </header>
+    <main>
+        <div class="card-container">
+        <div class="card">
+            
+        <form action="./obrigado.html" method=POST>
+            <div class="tit">Nome da Empresa</div>
+            <input type="text" name ="name" id="name" placeholder="Exemplo" ><br>
+            <div class="tit"> Email de contato</div>
+            <input type="email" name ="email" id="email" placeholder="exemplo@exemplo.com"><br>
+            <div class="tit" >CNPJ</div>
+            <input type="text" name ="name" id="name" placeholder="xx.xxx.xxx/xxxx-xx"><br>
+            <div class="tit">Telefone</div>
+            <input type="text" name ="telefone" id="telefone" placeholder="xxxxx-xxxx"><br>
+            <input type="submit">
+        </form>
+        </div> 
+        <div class="card">
+            <form action="./obrigado.html" method=POST>
+                <div class="tit">Alguma Dúvida ou Recomendação?</div>
+                <textarea name="name" id="textbox" cols="70" rows="10"></textarea>
+            <input type="submit">
+            </form>
+                
+        </div>
+        </div>
+
+    </main>
+    <footer>
+        <p class="qteca">
+            Projeto QuarentECA 
+        </p>
+    </footer>
+  </body>
+  </html>

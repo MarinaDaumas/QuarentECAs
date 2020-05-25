@@ -127,7 +127,7 @@ def adicionar_entregador(entregador):
     """, (cpf, nome))
     cpf = []
     cpf.append([entregador[1]])
-    print(cpf)
+    #print(cpf)
     return cpf
 
 
@@ -139,7 +139,7 @@ def adicionar_pedido(pedido):
     id_entregador = checar_entregador(pedido["entregador"])   
     
     data = pedido['data']
-    print(data, id_cliente, id_entregador)
+    #print(data, id_cliente, id_entregador)
     cursor.execute("""
     INSERT INTO entregas (data, cpf_entregador, id_cliente)
     VALUES (?, ?, ?)

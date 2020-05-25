@@ -20,8 +20,7 @@
     
     header {
       grid-area: header;
-      background-color: #fff;
-      
+      background-color: lightblue;
     }
 
     main {
@@ -31,7 +30,8 @@
 
     footer {
       grid-area: footer;
-      background-color: #fff;
+      background-color: #e23939;
+    
     }
 
     .card-container {
@@ -52,7 +52,7 @@
       transition: all 0.6s cubic-bezier(.25, .8, .25, 1);
       margin: 2rem;
       padding: 20px;
-      width: 400px;
+      width: 300px;
       min-height: 300px;
 
       display: flex;
@@ -73,16 +73,52 @@
     list-style: none; 
   }
 
+  
   img {
     position: absolute;
-    top: -50px;
+    top: -60px;
     left: -100px;
     width: 350px;
   }
 
-  nav {
-    display: flex;
-    justify-content: center;
+  .contato {
+    margin-top: 25px;
+    margin-left: 45%;
+    text-align: center;
+    background-color: #fff ;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  nav :hover, .tparceiro :hover{
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .tparceiro{
+    font-weight: bold;
+    font-size: 17px;
+    border:none;
+    padding-top: 0px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+  }
+
+  .rappi{
+    width: 110px;
+    margin-top: 260px;
+    margin-left: 140px;
+  }
+  .ifood{
+    width: 90px;
+    margin-top: 260px;
+    margin-left: 300px;
+  }
+
+  .qteca{
+    float:right;
+    font-size: 18px;
   }
 
   </style>
@@ -91,29 +127,30 @@
 <body>
   <div class="grid-container">
     <header>
-      <a href="./"><img src="../static/img/logo.png" alt="logo"></a>
+      <a href="./home.html"><img style="left:0px;" src="../static/img/logomelhor.png" alt="logo"></a>
       <nav>
-        <a href="./contato">Entre em contato conosco</a>
+        <div class="contato">
+        <a href="./contato.html"class="tparceiro" >Seja nosso parceiro</a>
+        </div>
       </nav>
     </header>
     <main>
       <div class="card-container">
         <div class="card">
           <div class="projetos">
-            <p class="titulo">Nosso Projeto</p>
-            <ul class="lista-projetos">
-              <li><a href="#Selo">Nosso Selo</a></li>
-              <li><a href="#Parceiros">Nossos Parceiros</a></li>
-              <li><a href="#motivação">A motivacao</a></li>
-            </ul>
+            <p class="titulo">Nosso Selo</p> 
+            <p>
+              A vantagem para a empresa consiste em ser reconhecida pela sua transparência e respeito ao consumidor,
+              através do recebimento do Selo de Comprometimento de Combate ao Coronavírus.
+            </p>
           </div>
         </div>
         <div class="card">
           <div id="selo">
-            <p class="titulo">Nosso Selo</p>
+            <p class="titulo">Como Participar</p>
             <p>
-              A vantagem para a empresa consiste em ser reconhecida pela sua transparência e respeito ao consumidor,
-              através do recebimento do Selo de Comprometimento de Combate ao Coronavírus.
+              Para Participar é simples, só entrar em contato conosco que 
+              nós te auxiliaremos a implantar a ferramenta com segurança e confiança
             </p>
           </div>
         </div>
@@ -123,18 +160,15 @@
             <p>
               Essas são as empresas que já entraram para a iniciativa, e estão ajudando a combater o Covid
             </p>
-            <div id="como-participar">
-              <h2>Como Participar</h2>
-              <p>
-                Para Participar é simples, só entrar em contato conosco que 
-                nós te auxiliaremos a implantar a ferramenta com segurança e confiança  
-              </p>
-            </div>
+            <img src="../static/img/rappi.png" class="rappi">        
+            <img src="../static/img/ifood.png" class="ifood" float="left">        
           </div>
       </div>
 
       </div>
     </main>
-    <footer>QuarentECAs </footer>
+    <footer><p class="qteca">
+      Projeto QuarentECA
+    </p> </footer>
   </body>
   </html>

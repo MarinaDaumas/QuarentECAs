@@ -1,17 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
 
-    </head>
-        <nav>
-            <a href="./">ECA</a>
-            <a href="./contato">Entre em contato conosco</a>
-          </nav><br>
-          
-    <div>Agradecemos a Colaboração!</div><br>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
 
-          <a href="./">Retorne à pagina principal</a><br>
-        <body>
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90px 1fr 40px;
+    grid-template-areas: "header""main""footer";
+    height: 100vh;
+  }
 
-        </body>
+  header {
+    grid-area: header;
+    background-color: lightblue;
+
+  }
+
+  main {
+    grid-area: main;
+    background-color: #efefef;
+  }
+
+  footer {
+    grid-area: footer;
+    background-color: #e23939;
+  }
+
+  .qteca {
+    float: right;
+    font-size: 18px;
+  }
+
+  .card {
+      position: relative;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      transition: all 0.6s cubic-bezier(.25, .8, .25, 1);
+      margin-top: 50px;
+      margin-left: 27%;
+      margin-bottom: 50px;
+      padding: 20px;
+      width: 600px;
+      min-height: 300px;
+      display: flex;
+      align-items: center;      
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+
+
+</style>
+<div class="grid-container">
+  <header>
+
+  </header>
+  <main>
+    <div class="card">
+      <h1>Agradecemos a Colaboração!</h1>
+      <br>
+      A equipe QuarentECA entrará em contato com você para realizar a implementação
+      <img src="../static/img/selo.png" alt="selo">
+      <a href="./home.html">Retorne à pagina principal</a><br>
+    </div><br>
+  </main>
+
+
+  <footer>
+    <p class="qteca">
+      Projeto QuarentECA
+    </p>
+  </footer>
+
 </html>
+
+</div>
