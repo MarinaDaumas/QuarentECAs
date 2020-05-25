@@ -38,7 +38,7 @@ def mandar_email(nome, email, data):
         https://coronavirus.saude.gov.br/sobre-a-doenca#se-eu-ficar-doente
 
 
-        A doença pelo novo coronavirus é altamente contagiosa, e pode ser tranmitida antes do inicio dos sintomas. A despeito de todos os cuidados para prevenção da tranmissao, ainda existe um risco mínimo de contágio nesses contatos, de modo que
+        A doença pelo novo coronavirus é altamente contagiosa, e pode ser transmitida antes do inicio dos sintomas. A despeito de todos os cuidados para prevenção da transmissão, ainda existe um risco mínimo de contágio nesses contatos, de modo que
         empresas e entregadores não podem ser responsabilizados por eventual tramissão da doenças.  Todos os trabalhadores envolvidos estão se arriscando para que tenhamos acesso àquilo que precisamos. Devemos a eles o nosso respeito e admiraçao.
 
         Nosso projeto visa a sua segurança e bem estar, assim como daqueles próximos a você. Sua participação é essencial para que possamos vencer o coronavírus e voltar à normalidade o mais rápido possivel. 
@@ -95,7 +95,7 @@ def mandar_email(nome, email, data):
         <a href="https://coronavirus.saude.gov.br/sobre-a-doenca#se-eu-ficar-doente" style="text-align: left; margin-left: 10%; font-weight: bold; text-size: 30px;"> Informativo Covid-19
         </a><br>
 
-        <p style="text-align: left; margin: 5%;">A doença pelo novo coronavirus é altamente contagiosa, e pode ser tranmitida antes do inicio dos sintomas. A despeito de todos os cuidados para prevenção da tranmissao, ainda existe um risco mínimo de contágio nesses contatos, de modo que
+        <p style="text-align: left; margin: 5%;">A doença pelo novo coronavirus é altamente contagiosa, e pode ser transmitida antes do inicio dos sintomas. A despeito de todos os cuidados para prevenção da transmissão, ainda existe um risco mínimo de contágio nesses contatos, de modo que
         empresas e entregadores não podem ser responsabilizados por eventual tramissão da doenças. Todos os trabalhadores envolvidos estão se arriscando para que tenhamos acesso àquilo que precisamos. Devemos a eles o nosso respeito e admiraçao.</p>
         <p style="text-align: left; margin: 5%;"> Nosso projeto visa a sua segurança e bem estar, assim como daqueles próximos a você. Sua participação é essencial para que possamos vencer o coronavírus e voltar à normalidade o mais rápido possivel. 
         Mais detalhes sobre nosso projeto e nossas parcerias podem ser encontradas por meio de nosso site, encaminhado abaixo.</p>

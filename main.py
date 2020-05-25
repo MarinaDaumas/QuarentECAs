@@ -18,7 +18,7 @@ def novo_pedido(pedido):
     """
 
     pedido["data"] = date.today()
-    print(pedido)
+    #print(pedido)
     adicionar_pedido(pedido)
 
 def nova_contaminacao(aviso):
@@ -26,9 +26,9 @@ def nova_contaminacao(aviso):
     aviso = {"nome": '', "cpf": ''}
     expostos = lista de dic 
     """
-    #ler JSON entregador contaminado
-    print("em nova contaminação: ")
-    print(aviso["cpf"])
+    
+    #print("em nova contaminação: ")
+    #print(aviso["cpf"])
 
     expostos = buscar_clientes_contaminados(aviso["cpf"])
     
@@ -38,7 +38,7 @@ def nova_contaminacao(aviso):
         y = convert(x)   
         entrega['data'] = y
 
-        print("no primeiro for", entrega["email"])
+        #print("no primeiro for", entrega["email"])
         mandar_email(entrega["nome"], entrega["email"], entrega["data"])
 
     #for dados_entrega in expostos:
@@ -57,19 +57,12 @@ def limpar():
 
 def main(msg):
     limpar()
-    print("type: ", type(msg), " and msg: ", msg)
+    #print("type: ", type(msg), " and msg: ", msg)
     if msg.get("cliente", 0):
-        print('no if da main \n\n\n')
+        #print('no if da main \n\n\n')
         novo_pedido(msg)
     else:
-        print('no else da main \n\n\n')
+        #print('no else da main \n\n\n')
         nova_contaminacao(msg)
 
 
-# if entrada == "pedido":
-#     novo_pedido()
-
-# else:
-#     nova_contaminacao()
-
-    #nova_contaminacao()
