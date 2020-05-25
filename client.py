@@ -9,9 +9,7 @@ class CLIENTE:
     PORT = 5050
     FORMAT = 'utf-8'
     DISCONNECT_MESSAGE = "!DISCONNECT"
-    #SERVER = '189.5.178.202' # public ip
-    #SERVER = '127.0.5.5'
-    SERVER = str(input(' Digite seu ip, não esqueça os pontos \n'))
+    SERVER = "162.198.0.29"
     ADDR = (SERVER, PORT)
 
 
