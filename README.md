@@ -36,6 +36,8 @@ Com essas mensagens, atualizamos nosso banco de dados e resgatamos o contato de 
 
 A vantagem para a empresa consiste em ser reconhecida pela sua transparência e respeito ao consumidor, através do recebimento do Selo de Comprometimento de Combate ao Covid.
 
+![selo](https://i.ibb.co/1J7J6zJ/selo-ECA-de-Qualidade.png)
+
 
 
 
