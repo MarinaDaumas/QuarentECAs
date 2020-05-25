@@ -5,6 +5,12 @@ from datetime import date, timedelta
 from banco import adicionar_pedido, buscar_clientes_contaminados, limpar_pedidos_antigos
 from mensagem import mandar_email
 
+def convert(string): 
+    li = list(string.split("-")) 
+    x = li.reverse()
+    k = '/'.join(li)
+    return k
+
 def novo_pedido(pedido):
     """
     pedido = {"entregador":[nome, cpf], "cliente":[nome, email, telefone]}
@@ -27,7 +33,10 @@ def nova_contaminacao(aviso):
     expostos = buscar_clientes_contaminados(aviso["cpf"])
     
     for entrega in expostos:
-        entrega['data'] = entrega['data']#.strftime("%d/%m/%Y")
+        x = []
+        x = entrega['data']
+        y = convert(x)   
+        entrega['data'] = y
 
         print("no primeiro for", entrega["email"])
         mandar_email(entrega["nome"], entrega["email"], entrega["data"])
