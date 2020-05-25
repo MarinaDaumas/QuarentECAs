@@ -73,29 +73,34 @@
     list-style: none; 
   }
 
+  
   img {
     position: absolute;
-    top: -50px;
+    top: -60px;
     left: -100px;
     width: 350px;
   }
 
-  nav {
-    margin-top: 20px;
+  .contato {
+    margin-top: 25px;
     margin-left: 45%;
     text-align: center;
     background-color: #fff ;
-    width: 175px;
+    width: 250px;
+    height: 40px;
     border-radius: 5px;
   }
 
-  nav :hover{
-    background-color: blueviolet;
+  nav :hover, .tparceiro :hover{
+    background-color: rgba(0, 0, 0, 0.25);
   }
 
   .tparceiro{
     font-weight: bold;
     font-size: 17px;
+    border:none;
+    padding-top: 0px;
+    text-align: center;
     text-decoration: none;
     color: black;
   }
@@ -122,9 +127,11 @@
 <body>
   <div class="grid-container">
     <header>
-      <a href="./"><img src="../static/img/logo.png" alt="logo"></a>
+      <a href="./home.html"><img style="left:0px;" src="../static/img/logomelhor.png" alt="logo"></a>
       <nav>
-        <a href="./contato" class="tparceiro">Seja nosso parceiro</a>
+        <div class="contato">
+        <a href="./contato.html"class="tparceiro" >Seja nosso parceiro</a>
+        </div>
       </nav>
     </header>
     <main>
